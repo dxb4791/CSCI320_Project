@@ -195,10 +195,10 @@ public class H2DatabaseMain {
              * order you created them. To gaurantee order list the columns
              * you want
              */
-            while(results.next()){
+            while(mresults.next()){
                 System.out.printf("\tCustomer %s: %s\n",
-                        results.getString(1),
-                        results.getString(2));
+                        mresults.getString(1),
+                        mresults.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
