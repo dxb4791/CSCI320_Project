@@ -8,7 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * Created by ceo on 3/24/2019.
+ * creates the customer table and SQL statments
+ * Created by ceo and dxb4791 on 3/24/2019.
  */
 public class CustomerTable {
     public static void populateCustomerTableFromCSV(Connection conn, String filename) throws SQLException {
@@ -31,6 +32,11 @@ public class CustomerTable {
         statement.execute(sql);
     }
 
+    /**
+     * creates the customer table
+     * precondition connection established
+     * @param conn established connection
+     */
     public static void createCustomerTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS customer("
@@ -47,6 +53,18 @@ public class CustomerTable {
         }
     }
 
+    /**
+     * add a customer to the database
+     * @param conn established connection
+     * @param C_ID customer id
+     * @param name name of the customer
+     * @param address address of the customer
+     * @param phone phone of the customer
+     * @param gender gender of the customer
+     * @param income income of the customer
+     * @param vin vin of the car the customer wants to buy
+     * @param D_ID dealer id
+     */
     public static void addCustomer(Connection conn, String C_ID,
                                    String name,
                                    String address,
@@ -67,9 +85,9 @@ public class CustomerTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of customer
      *
-     * @param customer: list of make objects to add
+     * @param customer: list of customer objects to add
      *
      * @return
      */
@@ -107,7 +125,7 @@ public class CustomerTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the customer table
      * with given columns and conditions
      *
      * @param conn
