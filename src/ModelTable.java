@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * @author dxb4791
+ */
 public class ModelTable {
     public static void populateModelTableFromCSV(Connection conn, String filename) throws SQLException {
         ArrayList<Model> model = new ArrayList<>();
