@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="descr. print out for dealerbuy and dealersell now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="changed to jdk 8">
+      <change beforePath="$PROJECT_DIR$/src/View/ManufactureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ManufactureView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -51,20 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/ManufactureView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -102,11 +102,11 @@
         <option value="$PROJECT_DIR$/src/H2DatabaseMain.java" />
         <option value="$PROJECT_DIR$/src/MakeTable.java" />
         <option value="$PROJECT_DIR$/src/View/View.java" />
-        <option value="$PROJECT_DIR$/src/View/ManufactureView.java" />
         <option value="$PROJECT_DIR$/src/View/WelcomeView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerBuyView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerSellView.java" />
+        <option value="$PROJECT_DIR$/src/View/ManufactureView.java" />
       </list>
     </option>
   </component>
@@ -351,7 +351,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553264182535</updated>
-      <workItem from="1553469015940" duration="215000" />
+      <workItem from="1553469015940" duration="498000" />
     </task>
     <task id="LOCAL-00001" summary="Updated database">
       <created>1553455916267</created>
@@ -388,11 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553467483134</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="changed to jdk 8">
+      <created>1553469379567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1553469379567</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5449000" />
+    <option name="totallyTimeSpent" value="5732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,10 +411,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="632" y="0" width="910" height="830" extended-state="0" />
+    <frame x="352" y="0" width="1190" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2370892" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17844523" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Nl-Palette" order="3" />
@@ -415,7 +422,7 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="7" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32840237" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32791728" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -450,7 +457,8 @@
     <MESSAGE value="started dealerView" />
     <MESSAGE value="changed to java 9" />
     <MESSAGE value="descr. print out for dealerbuy and dealersell now" />
-    <option name="LAST_COMMIT_MESSAGE" value="descr. print out for dealerbuy and dealersell now" />
+    <MESSAGE value="changed to jdk 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to jdk 8" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -549,21 +557,21 @@
     <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ManufactureView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

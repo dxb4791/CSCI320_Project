@@ -6,6 +6,6 @@ package View;
 public class ManufactureView implements View {
     @Override
     public void run() {
-        
+
     }
 }
