@@ -82,7 +82,7 @@ public class CustomerTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO customer (C_ID, name,address,phone,gender,income,vin,D_IDmakename, model) VALUES");
+        sb.append("INSERT INTO customer (C_ID, name,address,phone,gender,income,vin,D_ID) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
