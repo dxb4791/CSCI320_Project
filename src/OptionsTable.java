@@ -32,8 +32,8 @@ public class OptionsTable {
         try {
             String query = "CREATE TABLE IF NOT EXISTS options("
                     + "o_id VARCHAR(255) PRIMARY KEY,"
-                    + "TRANSMISSION VARCHAR(255),"+"COLOR VARCHAR(255)"+"ENGINE VARCHAR(255)"+"DRIVE VARCHAR(255)+" +
-                    "INTERIOR VARCHAR(255)"
+                    + "TRANSMISSION VARCHAR(255),"+"COLOR VARCHAR(255),"+"ENGINE VARCHAR(255),"+"DRIVE VARCHAR(255)," +
+                    "INTERIOR VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
