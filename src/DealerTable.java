@@ -33,7 +33,7 @@ public class DealerTable {
             String query = "CREATE TABLE IF NOT EXISTS dealer("
                     + "D_ID VARCHAR(255) PRIMARY KEY,"
                     + "NAME VARCHAR(255),"+ "location VARCHAR(255),"
-                    + "INVENTORY VARCHAR(255),"+ "PRIMARY_MAKE VARCHAR(255),"
+                    + "INVENTORY VARCHAR(255),"+ "PRIMARYMAKE VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -84,8 +84,8 @@ public class DealerTable {
          */
         for(int i = 0; i < dealer.size(); i++){
             Dealer m = dealer.get(i);
-            sb.append(String.format("(\'%s\',\'%s\')",
-                    m.getD_ID(), m.getName(),m.getInventory(),m.getPrimaryMake()));
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+                    m.getD_ID(), m.getName(),m.getLocation(),m.getInventory(),m.getPrimaryMake()));
             if( i != dealer.size()-1){
                 sb.append(",");
             }
