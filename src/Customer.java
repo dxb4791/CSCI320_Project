@@ -1,5 +1,6 @@
 /**
- * Created by ceo on 3/24/2019.
+ * Created by ceo and dxb4791 on 3/24/2019.
+ *
  */
 public class Customer {
     private final String C_ID;
@@ -28,6 +29,11 @@ public class Customer {
         this.D_ID = D_ID;
 
     }
+
+    /**
+     *
+     * @param data split form csv
+     */
     public Customer(String[] data){
         this.C_ID=data[0];
         this.name=data[1];
@@ -39,34 +45,66 @@ public class Customer {
         this.D_ID = data[7];
     }
 
+    /**
+     * getter for name
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * gettern for dealer id
+     * @return
+     */
     public String getD_ID() {
         return D_ID;
     }
 
+    /**
+     * getter for the vin
+     * @return
+     */
     public String getVin() {
         return vin;
     }
 
+    /**
+     * getter for the address
+     * @return
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * getter for the customer id
+     * @return
+     */
     public String getC_ID() {
         return C_ID;
     }
 
+    /**
+     * getter for the gender
+     * @return
+     */
     public String getGender() {
         return gender;
     }
 
+    /**
+     * getter for income
+     * @return
+     */
     public String getIncome() {
         return income;
     }
 
+    /**
+     * getter for phone
+     * @return
+     */
     public String getPhone() {
         return phone;
     }
