@@ -24,15 +24,15 @@ public class WelcomeView implements View {
         char prefix = input.charAt(0);
         prefix = Character.toUpperCase(prefix);
         switch (prefix){
-            case 'S':
+            case 'M':
                 System.out.println("Manufacture employee");
                 ManufactureView mv = new ManufactureView();
                 mv.run();
                 break;
             case 'D':
                 System.out.println("Dealer employee");
-                //DealerView dv = new DealerView();
-                //dv.run();
+                DealerView dv = new DealerView();
+                dv.run();
                 break;
             case 'C':
                 System.out.println("Customer");
