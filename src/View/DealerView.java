@@ -24,6 +24,14 @@ public class DealerView implements View{
         }
     }
 
+    public void dealerSellView() {
+
+    }
+
+    public void dealerBuyView() {
+
+    }
+
     public static void main(String[] args) {
         DealerView dv = new DealerView();
         dv.run();
