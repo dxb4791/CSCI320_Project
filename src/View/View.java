@@ -1,5 +1,8 @@
 package View;
 
-public class View {
+
+public interface View {
+
+    public void run();
 
 }
