@@ -162,6 +162,44 @@ public class H2DatabaseMain {
                         results2.getString(1),
                         results2.getString(2));
             }
+            /**
+             * Creates a sample make table
+             * and populates it from a csv file
+             */
+            ModelTable.createModelTable(demo.getConnection());
+            ModelTable.populateModelTableFromCSV(
+                    demo.getConnection(),
+                    "model.csv");
+
+            /**
+             * Just displays the table
+             */
+            ModelTable.printModelTable(demo.getConnection());
+
+            /**
+             * Runs a basic query on the table
+             */
+            System.out.println("\n\nPrint results of SELECT * FROM model");
+            ResultSet mresults = ModelTable.queryModelTable(
+                    demo.getConnection(),
+                    new ArrayList<String>(),
+                    new ArrayList<String>());
+
+            /**
+             * Iterates the Result set
+             *
+             * Result Set is what a query in H2 returns
+             *
+             * Note the columns are not 0 indexed
+             * If you give no columns it will return them in the
+             * order you created them. To gaurantee order list the columns
+             * you want
+             */
+            while(results.next()){
+                System.out.printf("\tModel %s: %s\n",
+                        results.getString(1),
+                        results.getString(2));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
