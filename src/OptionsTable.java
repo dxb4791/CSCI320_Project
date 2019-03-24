@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * handles the h2 options table and queries
+ * @author dxb4791
+ */
 public class OptionsTable {
     public static void populateOptionsTableFromCSV(Connection conn, String filename) throws SQLException {
         ArrayList<Options> options = new ArrayList<>();
@@ -28,6 +32,10 @@ public class OptionsTable {
         statement.execute(sql);
     }
 
+    /**
+     * create options table
+     * @param conn established connection
+     */
     public static void createOptionsTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS options("
@@ -42,6 +50,16 @@ public class OptionsTable {
         }
     }
 
+    /**
+     * add an option to the database
+     * @param conn established connection
+     * @param o_id option id
+     * @param transmission
+     * @param color
+     * @param engine
+     * @param drive
+     * @param interior
+     */
     public static void addOptions(Connection conn, String o_id,String transmission,String color, String engine,
                                   String drive,String interior){
         String query = String.format("INSERT INTO options "
@@ -56,9 +74,9 @@ public class OptionsTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of option
      *
-     * @param options: list of make objects to add
+     * @param options: list of option objects to add
      *
      * @return
      */
@@ -96,7 +114,7 @@ public class OptionsTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the option table
      * with given columns and conditions
      *
      * @param conn
