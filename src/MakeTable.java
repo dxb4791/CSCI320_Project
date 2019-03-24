@@ -34,6 +34,7 @@ public class MakeTable {
     }
 
     public static void createMakeTable(Connection conn){
+
         try {
             String query = "CREATE TABLE IF NOT EXISTS make("
                     + "MAKENAME VARCHAR(255) PRIMARY KEY,"
