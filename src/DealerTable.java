@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * class for the dealer table and its queries
+ * @author dxb4791
+ */
 public class DealerTable {
     public static void populateDealerTableFromCSV(Connection conn, String filename) throws SQLException {
         ArrayList<Dealer> dealer = new ArrayList<>();
@@ -28,6 +32,10 @@ public class DealerTable {
         statement.execute(sql);
     }
 
+    /**
+     * creates a dealer table
+     * @param conn
+     */
     public static void createDealerTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS dealer("
@@ -42,6 +50,15 @@ public class DealerTable {
         }
     }
 
+    /**
+     * add a dealer to the database
+     * @param conn established connection
+     * @param D_ID dealer id
+     * @param name name
+     * @param location address
+     * @param inventory inventor
+     * @param primaryMake make
+     */
     public static void addDealer(Connection conn, String D_ID,
                                  String name,
                                  String location,
@@ -58,9 +75,9 @@ public class DealerTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of dealer
      *
-     * @param dealer: list of make objects to add
+     * @param dealer: list of dealer objects to add
      *
      * @return
      */
@@ -97,7 +114,7 @@ public class DealerTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the dealer table
      * with given columns and conditions
      *
      * @param conn
@@ -177,7 +194,7 @@ public class DealerTable {
 
     /**
      * Queries and print the table
-     * @param conn
+     * @param conn established connection
      */
     public static void printDealerTable(Connection conn){
         String query = "SELECT * FROM dealer;";
