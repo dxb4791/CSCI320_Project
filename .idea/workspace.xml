@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="started dealerView">
+    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="changed to java 9">
+      <change afterPath="$PROJECT_DIR$/src/View/DealerBuyView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/DealerSellView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/H2DatabaseMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/H2DatabaseMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Make.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Make.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/MakeTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/MakeTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/ModelTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/ModelTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/OptionsTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/OptionsTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/VehicleTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/VehicleTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/DealerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,29 +27,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/View.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
+        <entry file="file://$PROJECT_DIR$/src/View/DealerSellView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/DealerBuyView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -79,12 +90,14 @@
         <option value="$PROJECT_DIR$/src/View/ManufactureView.java" />
         <option value="$PROJECT_DIR$/src/View/WelcomeView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerView.java" />
+        <option value="$PROJECT_DIR$/src/View/DealerBuyView.java" />
+        <option value="$PROJECT_DIR$/src/View/DealerSellView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="725" />
-    <option name="width" value="3133" />
+    <option name="x" value="1390" />
+    <option name="width" value="2468" />
     <option name="height" value="2073" />
   </component>
   <component name="ProjectView">
@@ -125,7 +138,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553465507811" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553467455997" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/H2/bin/h2-1.4.199.jar!/" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -149,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DealerView">
+  <component name="RunManager" selected="Application.DealerBuyView">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -179,6 +192,34 @@
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealerBuyView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="View.DealerBuyView" />
+      <module name="CSCI320_Project" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DealerSellView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="View.DealerSellView" />
+      <module name="CSCI320_Project" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -273,9 +314,13 @@
     <list>
       <item itemvalue="Application.H2DatabaseMain" />
       <item itemvalue="Application.DealerView" />
+      <item itemvalue="Application.DealerSellView" />
+      <item itemvalue="Application.DealerBuyView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DealerBuyView" />
+        <item itemvalue="Application.DealerSellView" />
         <item itemvalue="Application.DealerView" />
         <item itemvalue="Application.H2DatabaseMain" />
       </list>
@@ -313,11 +358,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553465002118</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed to java 9">
+      <created>1553465532577</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553465532577</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1906000" />
+    <option name="totallyTimeSpent" value="3934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,10 +381,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="0" width="1253" height="829" extended-state="0" />
+    <frame x="556" y="0" width="987" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16485356" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21205598" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Nl-Palette" order="3" />
@@ -373,7 +425,8 @@
     <MESSAGE value="Updated database" />
     <MESSAGE value="Created view interface and basic welcome view" />
     <MESSAGE value="started dealerView" />
-    <option name="LAST_COMMIT_MESSAGE" value="started dealerView" />
+    <MESSAGE value="changed to java 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to java 9" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -469,10 +522,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DealerBuyView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="493">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DealerSellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -516,7 +583,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>9.0</last-edited>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -533,6 +600,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
