@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/WelcomeView.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ManufactureView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/View.java" afterPath="$PROJECT_DIR$/src/View/View.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/WelcomeView.java" afterPath="$PROJECT_DIR$/src/View/WelcomeView.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,8 +84,18 @@
       <file leaf-file-name="WelcomeView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="263">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManufactureView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ManufactureView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/MakeTable.java" />
         <option value="$PROJECT_DIR$/src/View/View.java" />
         <option value="$PROJECT_DIR$/src/View/WelcomeView.java" />
+        <option value="$PROJECT_DIR$/src/View/ManufactureView.java" />
       </list>
     </option>
   </component>
@@ -491,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553455916267</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created view interface and basic welcome view">
+      <created>1553463130551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553463130551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -548,7 +564,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated database" />
+    <MESSAGE value="Created view interface and basic welcome view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created view interface and basic welcome view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -772,10 +789,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ManufactureView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="263">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
       </provider>
