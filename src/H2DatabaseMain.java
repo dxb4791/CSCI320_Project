@@ -200,6 +200,7 @@ public class H2DatabaseMain {
                         results.getString(1),
                         results.getString(2));
             }
+            CustomerTable.printCustomerTable(demo.getConnection());
         } catch (SQLException e) {
             e.printStackTrace();
         }
