@@ -73,7 +73,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO person (makename, model) VALUES");
+        sb.append("INSERT INTO make (makename, model) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
