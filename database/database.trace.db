@@ -1,3 +1,6 @@
 2019-03-23 17:54:53 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PERSON" not found; SQL statement:
 INSERT INTO person (makename, model) VALUES [42102-199]
+2019-03-24 13:18:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PERSON" not found; SQL statement:
+INSERT INTO person (makename, model) VALUES [42102-199]
