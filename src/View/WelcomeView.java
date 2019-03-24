@@ -17,6 +17,7 @@ public class WelcomeView implements View {
         System.out.println("[D]ealer");
         System.out.println("[C]ustomer");
         System.out.println("Enter the title or [] Prefix of your role:");
+
         String input = in.next();
         if(input.length() == 0){
             input = "Q";
@@ -36,8 +37,8 @@ public class WelcomeView implements View {
                 break;
             case 'C':
                 System.out.println("Customer");
-                //CustomerView cv = new CustomerView();
-                //cv.run();
+                CustomerView cv = new CustomerView();
+                cv.run();
                 break;
             case 'Q':
                 System.out.println("Quit application");
