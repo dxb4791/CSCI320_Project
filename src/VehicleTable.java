@@ -32,9 +32,9 @@ public class VehicleTable {
         try {
             String query = "CREATE TABLE IF NOT EXISTS vehicle("
                     + "VIN VARCHAR(255) PRIMARY KEY,"
-                    + "MILEAGE VARCHAR(255),"+"D_ID VARCHAR(255)"
-                    + "OPTIONS VARCHAR(255)"+"PRICE VARCHAR(255)"
-                    +"MODELNAME VARCHAR(255)"
+                    + "MILEAGE VARCHAR(255),"+"D_ID VARCHAR(255),"
+                    + "OPTIONS VARCHAR(255),"+"PRICE VARCHAR(255),"
+                    +"MODELNAME VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -86,7 +86,7 @@ public class VehicleTable {
          */
         for(int i = 0; i < vehicles.size(); i++){
             Vehicle m = vehicles.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
                     m.getVin(), m.getMileage(),m.getD_ID(),m.getOptions(),m.getPrice(),m.getModelName()));
             if( i != vehicles.size()-1){
                 sb.append(",");
