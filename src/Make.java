@@ -5,6 +5,11 @@ public class Make {
     String makename;
     String model;
 
+    /**
+     * regular make constructor
+     * @param make make or brand of the car
+     * @param model model of the car
+     */
     public Make(String make, String model){
         this.makename = make;
         this.model = model;
@@ -15,6 +20,10 @@ public class Make {
         this.model = data[1];
     }
 
+    /**
+     * name getter
+     * @return
+     */
     public String getMakename() {
         return makename;
     }
