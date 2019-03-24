@@ -1,3 +1,7 @@
+/**
+ * @author dxb4791
+ */
+
 public class Model {
     private final String Name;
     private final String year;
