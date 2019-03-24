@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * vehicle table implementation
+ * @author dxb4791
+ */
 public class VehicleTable {
     public static void populateVehicleTableFromCSV(Connection conn, String filename) throws SQLException {
         ArrayList<Vehicle> vehicle = new ArrayList<>();
@@ -28,6 +32,10 @@ public class VehicleTable {
         statement.execute(sql);
     }
 
+    /**
+     * creates the vehicle table
+     * @param conn
+     */
     public static void createVehicleTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS vehicle("
@@ -43,6 +51,16 @@ public class VehicleTable {
         }
     }
 
+    /**
+     * add a vehicle
+     * @param conn established connection
+     * @param vin
+     * @param mileage
+     * @param D_ID
+     * @param options
+     * @param price
+     * @param ModelName
+     */
     public static void addVehicle(Connection conn, String vin,
                                   String mileage,
                                   String D_ID,
@@ -60,9 +78,9 @@ public class VehicleTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of vehicle
      *
-     * @param : list of make objects to add
+     * @param : list of vehicle objects to add
      *
      * @return
      */
