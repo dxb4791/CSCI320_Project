@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
+ * handles the table and queries for the model
  * @author dxb4791
  */
 public class ModelTable {
@@ -31,6 +32,10 @@ public class ModelTable {
         statement.execute(sql);
     }
 
+    /**
+     * creates a table in H2 of the model
+     * @param conn established connection
+     */
     public static void createModelTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS model("
@@ -44,6 +49,16 @@ public class ModelTable {
         }
     }
 
+    /**
+     * add a model to the database
+     * @param conn established connection
+     * @param name name
+     * @param year year
+     * @param c_class class
+     * @param seats number of seats
+     * @param doors number of doors
+     * @param makeName name of the make
+     */
     public static void addModel(Connection conn, String name, String year, String c_class, String seats, String doors, String makeName){
         String query = String.format("INSERT INTO model "
                 + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", name, year,c_class,seats,doors,makeName);
@@ -56,9 +71,9 @@ public class ModelTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of model
      *
-     * @param model: list of make objects to add
+     * @param model: list of model objects to add
      *
      * @return
      */
