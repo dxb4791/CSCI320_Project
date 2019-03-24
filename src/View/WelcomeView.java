@@ -24,7 +24,7 @@ public class WelcomeView implements View {
         char prefix = input.charAt(0);
         Character.toUpperCase(prefix);
         switch (prefix){
-            case 'M':
+            case 'S':
                 System.out.println("Manufacture employee");
                 ManufactureView mv = new ManufactureView();
                 mv.run();
