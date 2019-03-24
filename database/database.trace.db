@@ -7,3 +7,95 @@ INSERT INTO person (makename, model) VALUES [42102-199]
 2019-03-24 13:24:18 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PERSON" not found; SQL statement:
 INSERT INTO person (makename, model) VALUES [42102-199]
+2019-03-24 16:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS MODEL(NAME VARCHAR(255) PRIMARY KEY,YEAR VARCHAR(255),CLASS VARCHAR(255)SEATS[*] VARCHAR(255)DOORS VARCHAR(255)MAKENAME VARCHAR(255)); "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS model(NAME VARCHAR(255) PRIMARY KEY,YEAR VARCHAR(255),CLASS VARCHAR(255)SEATS VARCHAR(255)DOORS VARCHAR(255)MAKENAME VARCHAR(255)); [42001-199]
+2019-03-24 16:27:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MODEL" not found; SQL statement:
+INSERT INTO model (mname, year,c_class,seats,doors,makeName) VALUES [42102-199]
+2019-03-24 16:29:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS MODEL(NAME VARCHAR(255) PRIMARY KEY,YEAR VARCHAR(255),CLASS VARCHAR(255)SEATS[*] VARCHAR(255)DOORS VARCHAR(255)MAKENAME VARCHAR(255)); "; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS model(NAME VARCHAR(255) PRIMARY KEY,YEAR VARCHAR(255),CLASS VARCHAR(255)SEATS VARCHAR(255)DOORS VARCHAR(255)MAKENAME VARCHAR(255)); [42001-199]
+2019-03-24 16:29:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MODEL" not found; SQL statement:
+INSERT INTO model (mname, year,c_class,seats,doors,makeName) VALUES('name','year','class','seats','doors'),('Veyron','2008','coupe','2','2'),('Civic','1999','compact','4','4'),('Rio','2008','subcompact','4','4'),('Altima','1999','compact','4','4'),('Tacoma','2008','pickup','2-5','4'),('V8 Vantage','2009','sports','2','2'),('NSX','2002','sports','2','2'),('S6','2010','mid-size luxury','5','4'),('iQ','2012','subcompact','4','2'),('Escape','2010','compact SUV','5','4'); [42102-199]
+2019-03-24 16:31:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "MNAME" not found; SQL statement:
+INSERT INTO model (mname, year,c_class,seats,doors,makeName) VALUES('name','year','class','seats','doors'),('Veyron','2008','coupe','2','2'),('Civic','1999','compact','4','4'),('Rio','2008','subcompact','4','4'),('Altima','1999','compact','4','4'),('Tacoma','2008','pickup','2-5','4'),('V8 Vantage','2009','sports','2','2'),('NSX','2002','sports','2','2'),('S6','2010','mid-size luxury','5','4'),('iQ','2012','subcompact','4','2'),('Escape','2010','compact SUV','5','4'); [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at ModelTable.populateModelTableFromCSV(ModelTable.java:31)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
+2019-03-24 16:33:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "C_CLASS" not found; SQL statement:
+INSERT INTO model (name, year,c_class,seats,doors,makeName) VALUES('name','year','class','seats','doors'),('Veyron','2008','coupe','2','2'),('Civic','1999','compact','4','4'),('Rio','2008','subcompact','4','4'),('Altima','1999','compact','4','4'),('Tacoma','2008','pickup','2-5','4'),('V8 Vantage','2009','sports','2','2'),('NSX','2002','sports','2','2'),('S6','2010','mid-size luxury','5','4'),('iQ','2012','subcompact','4','2'),('Escape','2010','compact SUV','5','4'); [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at ModelTable.populateModelTableFromCSV(ModelTable.java:31)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
+2019-03-24 16:33:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO model (name, year,class,seats,doors,makeName) VALUES('name','year','class','seats','doors'),('Veyron','2008','coupe','2','2'),('Civic','1999','compact','4','4'),('Rio','2008','subcompact','4','4'),('Altima','1999','compact','4','4'),('Tacoma','2008','pickup','2-5','4'),('V8 Vantage','2009','sports','2','2'),('NSX','2002','sports','2','2'),('S6','2010','mid-size luxury','5','4'),('iQ','2012','subcompact','4','2'),('Escape','2010','compact SUV','5','4'); [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at ModelTable.populateModelTableFromCSV(ModelTable.java:31)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
+2019-03-24 16:34:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO model (name, year,class,seats,doors,makeName) VALUES('name','year','class','seats','doors'),('Veyron','2008','coupe','2','2'),('Civic','1999','compact','4','4'),('Rio','2008','subcompact','4','4'),('Altima','1999','compact','4','4'),('Tacoma','2008','pickup','2-5','4'),('V8 Vantage','2009','sports','2','2'),('NSX','2002','sports','2','2'),('S6','2010','mid-size luxury','5','4'),('iQ','2012','subcompact','4','2'),('Escape','2010','compact SUV','5','4'); [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at ModelTable.populateModelTableFromCSV(ModelTable.java:31)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
