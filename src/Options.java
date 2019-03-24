@@ -1,3 +1,7 @@
+/**
+ * options class provides implementation of the option attribute
+ * @author dxb4791
+ */
 public class Options {
     private final String o_id;
     private final String transmission;
@@ -6,6 +10,15 @@ public class Options {
     private final String drive;
     private final String interior;
 
+    /**
+     * regular options constructor
+     * @param o_id options id
+     * @param transmission
+     * @param color
+     * @param engine
+     * @param drive
+     * @param interior
+     */
     public Options(String o_id,String transmission, String color,
                    String engine,String drive,String interior){
         this.o_id=o_id;
@@ -16,6 +29,11 @@ public class Options {
         this.interior=interior;
 
     }
+
+    /**
+     * csv options constructor
+     * @param data
+     */
     public Options(String[] data){
         this.o_id = data[0];
         this.transmission = data[1];
