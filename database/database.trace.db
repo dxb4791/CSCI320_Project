@@ -142,3 +142,60 @@ INSERT INTO vehicle (vin, mileage, D_ID,options,price,ModelName) VALUES('vin','m
 2019-03-24 17:00:59 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "OPTIONS" not found; SQL statement:
 SELECT * FROM options ; [42102-199]
+2019-03-24 17:11:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PRIMARYMAKE" not found; SQL statement:
+INSERT INTO dealer ( D_ID, name,location,inventory,primaryMake) VALUES('D_ID','name'),('236188','CarMin Inc.'),('781880','OttoNation'),('336016','Dorkel Automotive'),('752447','HandMeUrCar'),('168263','Hendrix Automotive'),('501967','Harrison Ford Automotive Inc.'),('929272','Costcar'),('102067','Walcart'),('838742','AutoBots'),('577280','CarHeaven'); [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.parseColumn(Parser.java:1377)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1362)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1731)
+	at org.h2.command.Parser.parseInsert(Parser.java:1684)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at DealerTable.populateDealerTableFromCSV(DealerTable.java:28)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
+2019-03-24 17:12:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO dealer ( D_ID, name,location,inventory,primaryMake) VALUES('D_ID','name'),('236188','CarMin Inc.'),('781880','OttoNation'),('336016','Dorkel Automotive'),('752447','HandMeUrCar'),('168263','Hendrix Automotive'),('501967','Harrison Ford Automotive Inc.'),('929272','Costcar'),('102067','Walcart'),('838742','AutoBots'),('577280','CarHeaven'); [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at DealerTable.populateDealerTableFromCSV(DealerTable.java:28)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
+2019-03-24 17:14:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO dealer ( D_ID, name,location,inventory,primaryMake) VALUES('D_ID','name'),('236188','CarMin Inc.'),('781880','OttoNation'),('336016','Dorkel Automotive'),('752447','HandMeUrCar'),('168263','Hendrix Automotive'),('501967','Harrison Ford Automotive Inc.'),('929272','Costcar'),('102067','Walcart'),('838742','AutoBots'),('577280','CarHeaven'); [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at DealerTable.populateDealerTableFromCSV(DealerTable.java:28)
+	at H2DatabaseMain.main(H2DatabaseMain.java:170)
