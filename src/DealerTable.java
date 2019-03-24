@@ -1,7 +1,3 @@
-/**
- * Created by ceo on 3/23/2019.
- */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,34 +7,41 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class MakeTable {
-
-    public static void populateMakeTableFromCSV(Connection conn, String filename) throws SQLException{
-        ArrayList<Make> makes = new ArrayList<>();
+/**
+ * class for the dealer table and its queries
+ * @author dxb4791
+ */
+public class DealerTable {
+    public static void populateDealerTableFromCSV(Connection conn, String filename) throws SQLException {
+        ArrayList<Dealer> dealer = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
             while ((line = br.readLine()) != null){
                 String[] split = line.split(",");
-                makes.add(new Make(split));
+                dealer.add(new Dealer(split));
             }
             br.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        String sql = createMakeInsertSQL(makes);
+        String sql = createDealerInsertSQL(dealer);
 
         Statement statement = conn.createStatement();
         statement.execute(sql);
     }
 
-    public static void createMakeTable(Connection conn){
-
+    /**
+     * creates a dealer table
+     * @param conn
+     */
+    public static void createDealerTable(Connection conn){
         try {
-            String query = "CREATE TABLE IF NOT EXISTS make("
-                    + "MAKENAME VARCHAR(255) PRIMARY KEY,"
-                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
+            String query = "CREATE TABLE IF NOT EXISTS dealer("
+                    + "D_ID VARCHAR(255) PRIMARY KEY,"
+                    + "NAME VARCHAR(255),"+ "location VARCHAR(255),"
+                    + "INVENTORY VARCHAR(255),"+ "PRIMARYMAKE VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -47,9 +50,22 @@ public class MakeTable {
         }
     }
 
-    public static void addPerson(Connection conn, String makename, String model,String D_ID){
-        String query = String.format("INSERT INTO make "
-                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
+    /**
+     * add a dealer to the database
+     * @param conn established connection
+     * @param D_ID dealer id
+     * @param name name
+     * @param location address
+     * @param inventory inventor
+     * @param primaryMake make
+     */
+    public static void addDealer(Connection conn, String D_ID,
+                                 String name,
+                                 String location,
+                                 String inventory,
+                                 String primaryMake){
+        String query = String.format("INSERT INTO dealer "
+                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", D_ID, name,location,inventory,primaryMake);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -59,13 +75,13 @@ public class MakeTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of dealer
      *
-     * @param makes: list of make objects to add
+     * @param dealer: list of dealer objects to add
      *
      * @return
      */
-    public static String createMakeInsertSQL(ArrayList<Make> makes){
+    public static String createDealerInsertSQL(ArrayList<Dealer> dealer){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -74,7 +90,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
+        sb.append("INSERT INTO dealer ( D_ID, name,location,inventory,primaryMake) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -83,11 +99,11 @@ public class MakeTable {
          *
          * If it is the last person add a semi-colon to end the statement
          */
-        for(int i = 0; i < makes.size(); i++){
-            Make m = makes.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
-                    m.getMakename(), m.getModel(),m.getD_ID()));
-            if( i != makes.size()-1){
+        for(int i = 0; i < dealer.size(); i++){
+            Dealer m = dealer.get(i);
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+                    m.getD_ID(), m.getName(),m.getLocation(),m.getInventory(),m.getPrimaryMake()));
+            if( i != dealer.size()-1){
                 sb.append(",");
             }
             else{
@@ -98,7 +114,7 @@ public class MakeTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the dealer table
      * with given columns and conditions
      *
      * @param conn
@@ -106,9 +122,9 @@ public class MakeTable {
      * @param whereClauses: conditions to limit query by
      * @return
      */
-    public static ResultSet queryMakeTable(Connection conn,
-                                             ArrayList<String> columns,
-                                             ArrayList<String> whereClauses){
+    public static ResultSet queryDealerTable(Connection conn,
+                                           ArrayList<String> columns,
+                                           ArrayList<String> whereClauses){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -139,7 +155,7 @@ public class MakeTable {
         /**
          * Tells it which table to get the data from
          */
-        sb.append("FROM make ");
+        sb.append("FROM dealer ");
 
         /**
          * If we gave it conditions append them
@@ -178,24 +194,25 @@ public class MakeTable {
 
     /**
      * Queries and print the table
-     * @param conn
+     * @param conn established connection
      */
-    public static void printMakeTable(Connection conn){
-        String query = "SELECT * FROM make;";
+    public static void printDealerTable(Connection conn){
+        String query = "SELECT * FROM dealer;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Make %s: %s: %s  \n",
+                System.out.printf("Dealer %s: %s : %s : %s : %s \n",
                         result.getString(1),
                         result.getString(2),
-                        result.getString(3));
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
-
 }

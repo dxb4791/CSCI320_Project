@@ -1,7 +1,3 @@
-/**
- * Created by ceo on 3/23/2019.
- */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,34 +7,44 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class MakeTable {
-
-    public static void populateMakeTableFromCSV(Connection conn, String filename) throws SQLException{
-        ArrayList<Make> makes = new ArrayList<>();
+/**
+ * creates the customer table and SQL statments
+ * Created by ceo and dxb4791 on 3/24/2019.
+ */
+public class CustomerTable {
+    public static void populateCustomerTableFromCSV(Connection conn, String filename) throws SQLException {
+        ArrayList<Customer> customer = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
             while ((line = br.readLine()) != null){
                 String[] split = line.split(",");
-                makes.add(new Make(split));
+                customer.add(new Customer(split));
             }
             br.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        String sql = createMakeInsertSQL(makes);
+        String sql = createCustomerInsertSQL(customer);
 
         Statement statement = conn.createStatement();
         statement.execute(sql);
     }
 
-    public static void createMakeTable(Connection conn){
-
+    /**
+     * creates the customer table
+     * precondition connection established
+     * @param conn established connection
+     */
+    public static void createCustomerTable(Connection conn){
         try {
-            String query = "CREATE TABLE IF NOT EXISTS make("
-                    + "MAKENAME VARCHAR(255) PRIMARY KEY,"
-                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
+            String query = "CREATE TABLE IF NOT EXISTS customer("
+                    + "C_ID VARCHAR(255) PRIMARY KEY,"
+                    + "NAME VARCHAR(255),"+"ADDRESS VARCHAR(255),"
+                    +"PHONE VARCHAR(255),"+"GENDER VARCHAR(255),"
+                    +"INCOME VARCHAR(255),"+"VIN VARCHAR(255),"
+                    +"D_ID VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -47,9 +53,29 @@ public class MakeTable {
         }
     }
 
-    public static void addPerson(Connection conn, String makename, String model,String D_ID){
-        String query = String.format("INSERT INTO make "
-                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
+    /**
+     * add a customer to the database
+     * @param conn established connection
+     * @param C_ID customer id
+     * @param name name of the customer
+     * @param address address of the customer
+     * @param phone phone of the customer
+     * @param gender gender of the customer
+     * @param income income of the customer
+     * @param vin vin of the car the customer wants to buy
+     * @param D_ID dealer id
+     */
+    public static void addCustomer(Connection conn, String C_ID,
+                                   String name,
+                                   String address,
+                                   String phone,
+                                   String gender,
+                                   String income,
+                                   String vin,
+                                   String D_ID){
+        String query = String.format("INSERT INTO customer "
+                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
+                C_ID, name,address,phone,gender,income,vin,D_ID);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -59,13 +85,13 @@ public class MakeTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of customer
      *
-     * @param makes: list of make objects to add
+     * @param customer: list of customer objects to add
      *
      * @return
      */
-    public static String createMakeInsertSQL(ArrayList<Make> makes){
+    public static String createCustomerInsertSQL(ArrayList<Customer> customer){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -74,7 +100,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
+        sb.append("INSERT INTO customer (C_ID, name,address,phone,gender,income,vin,D_ID) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -83,11 +109,12 @@ public class MakeTable {
          *
          * If it is the last person add a semi-colon to end the statement
          */
-        for(int i = 0; i < makes.size(); i++){
-            Make m = makes.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
-                    m.getMakename(), m.getModel(),m.getD_ID()));
-            if( i != makes.size()-1){
+        for(int i = 0; i < customer.size(); i++){
+            Customer m = customer.get(i);
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+                    m.getC_ID(),m.getName(),m.getAddress(),m.getPhone(),m.getGender(),m.getIncome(),
+                    m.getVin(),m.getD_ID()));
+            if( i != customer.size()-1){
                 sb.append(",");
             }
             else{
@@ -98,7 +125,7 @@ public class MakeTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the customer table
      * with given columns and conditions
      *
      * @param conn
@@ -106,9 +133,9 @@ public class MakeTable {
      * @param whereClauses: conditions to limit query by
      * @return
      */
-    public static ResultSet queryMakeTable(Connection conn,
-                                             ArrayList<String> columns,
-                                             ArrayList<String> whereClauses){
+    public static ResultSet queryCustomerTable(Connection conn,
+                                           ArrayList<String> columns,
+                                           ArrayList<String> whereClauses){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -139,7 +166,7 @@ public class MakeTable {
         /**
          * Tells it which table to get the data from
          */
-        sb.append("FROM make ");
+        sb.append("FROM customer ");
 
         /**
          * If we gave it conditions append them
@@ -180,17 +207,22 @@ public class MakeTable {
      * Queries and print the table
      * @param conn
      */
-    public static void printMakeTable(Connection conn){
-        String query = "SELECT * FROM make;";
+    public static void printCustomerTable(Connection conn){
+        String query = "SELECT * FROM customer;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Make %s: %s: %s  \n",
+                System.out.printf("Customer %s: %s: %s: %s: %s: %s: %s: %s \n",
                         result.getString(1),
                         result.getString(2),
-                        result.getString(3));
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6),
+                        result.getString(7),
+                        result.getString(8));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -198,4 +230,6 @@ public class MakeTable {
 
     }
 
+
 }
+

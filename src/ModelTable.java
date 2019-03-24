@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
+ * handles the table and queries for the model
  * @author dxb4791
  */
 public class ModelTable {
@@ -31,12 +32,16 @@ public class ModelTable {
         statement.execute(sql);
     }
 
+    /**
+     * creates a table in H2 of the model
+     * @param conn established connection
+     */
     public static void createModelTable(Connection conn){
         try {
             String query = "CREATE TABLE IF NOT EXISTS model("
                     + "NAME VARCHAR(255) PRIMARY KEY,"
-                    + "YEAR VARCHAR(255),"+"CLASS VARCHAR(255)"+ "SEATS VARCHAR(255)" +"DOORS VARCHAR(255)"
-                    +"MAKENAME VARCHAR(255)"+ ");";
+                    + "YEAR VARCHAR(255),"+"CLASS VARCHAR(255),"+ "SEATS VARCHAR(255)," +"DOORS VARCHAR(255),"
+                    +"MAKENAME VARCHAR(255),"+ ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
         }catch (SQLException e){
@@ -44,9 +49,19 @@ public class ModelTable {
         }
     }
 
+    /**
+     * add a model to the database
+     * @param conn established connection
+     * @param name name
+     * @param year year
+     * @param c_class class
+     * @param seats number of seats
+     * @param doors number of doors
+     * @param makeName name of the make
+     */
     public static void addModel(Connection conn, String name, String year, String c_class, String seats, String doors, String makeName){
         String query = String.format("INSERT INTO model "
-                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", name, year,c_class,seats,doors,makeName);
+                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", name, year,c_class,seats,doors,makeName);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -56,9 +71,9 @@ public class ModelTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of model
      *
-     * @param model: list of make objects to add
+     * @param model: list of model objects to add
      *
      * @return
      */
@@ -71,7 +86,7 @@ public class ModelTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO model (mname, year,c_class,seats,doors,makeName) VALUES");
+        sb.append("INSERT INTO model (name, year,class,seats,doors,makeName) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -82,7 +97,7 @@ public class ModelTable {
          */
         for(int i = 0; i < model.size(); i++){
             Model m = model.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
                     m.getName(),m.getYear(),m.getC_class(),m.getSeats(),m.getDoors()
                     ,m.getMakename()));
             if( i != model.size()-1){
@@ -185,9 +200,13 @@ public class ModelTable {
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Model %s: %s: %s: %s: %s \n",
+                System.out.printf("Model %s: %s: %s: %s: %s: %s \n",
                         result.getString(1),
-                        result.getString(2));
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
