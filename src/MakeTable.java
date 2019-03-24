@@ -38,7 +38,7 @@ public class MakeTable {
         try {
             String query = "CREATE TABLE IF NOT EXISTS make("
                     + "MAKENAME VARCHAR(255) PRIMARY KEY,"
-                    + "MODEL VARCHAR(255),"
+                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -47,9 +47,9 @@ public class MakeTable {
         }
     }
 
-    public static void addPerson(Connection conn, String makename, String model){
+    public static void addPerson(Connection conn, String makename, String model,String D_ID){
         String query = String.format("INSERT INTO make "
-                                    + "VALUES(\'%s\',\'%s\');", makename, model);
+                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -74,7 +74,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO make (makename, model) VALUES");
+        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -85,8 +85,8 @@ public class MakeTable {
          */
         for(int i = 0; i < makes.size(); i++){
             Make m = makes.get(i);
-            sb.append(String.format("(\'%s\',\'%s\')",
-                    m.getMakename(), m.getModel()));
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
+                    m.getMakename(), m.getModel(),m.getD_ID()));
             if( i != makes.size()-1){
                 sb.append(",");
             }
@@ -187,9 +187,10 @@ public class MakeTable {
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Make %s: %s \n",
+                System.out.printf("Make %s: %s: %s  \n",
                         result.getString(1),
-                        result.getString(2));
+                        result.getString(2),
+                        result.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
