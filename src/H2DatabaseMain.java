@@ -166,21 +166,21 @@ public class H2DatabaseMain {
              * Creates a sample make table
              * and populates it from a csv file
              */
-            ModelTable.createModelTable(demo.getConnection());
-            ModelTable.populateModelTableFromCSV(
+            VehicleTable.createVehicleTable(demo.getConnection());
+            VehicleTable.populateVehicleTableFromCSV(
                     demo.getConnection(),
-                    "model.csv");
+                    "vehicle.csv");
 
             /**
              * Just displays the table
              */
-            ModelTable.printModelTable(demo.getConnection());
+            VehicleTable.printVehicleTable(demo.getConnection());
 
             /**
              * Runs a basic query on the table
              */
-            System.out.println("\n\nPrint results of SELECT * FROM model");
-            ResultSet mresults = ModelTable.queryModelTable(
+            System.out.println("\n\nPrint results of SELECT * FROM vehicles");
+            ResultSet mresults = VehicleTable.queryVehicleTable(
                     demo.getConnection(),
                     new ArrayList<String>(),
                     new ArrayList<String>());
@@ -196,7 +196,7 @@ public class H2DatabaseMain {
              * you want
              */
             while(results.next()){
-                System.out.printf("\tModel %s: %s\n",
+                System.out.printf("\tVehicles %s: %s\n",
                         results.getString(1),
                         results.getString(2));
             }
