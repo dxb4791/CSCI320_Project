@@ -12,12 +12,12 @@ public class VehiclesManufactureView implements View{
         prefix = Character.toUpperCase(prefix);
         switch (prefix){
             case 'B':
-                DealersManufactureView dmv = new DealersManufactureView();
-                dmv.run();
+                BrandView bv = new BrandView();
+                bv.run();
                 break;
             case 'M':
-                VehiclesManufactureView vmv = new VehiclesManufactureView();
-                vmv.run();
+                ModelView mv = new ModelView();
+                mv.run();
                 break;
             case 'Q':
                 return;
