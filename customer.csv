@@ -1,101 +1,44 @@
 C_ID,name,address,phone,gender,income,vin,D_ID
-950350,Bob Johnson,"0468 Talisman Hill_Pompano Beach, FL 33075",754-602-2175,M,144666,4F3GJ47D55S879673,236188
-901794,John Johnson,"45067 Spohn Parkway_Salt Lake City, Utah 84125",801-222-7270,M,196762,JTEBU5JR8C5664993,781880
-487147,Goldia Marshallsay,"9854 Hoard Way_Winstom Salem, NC 27116",336-803-6044,F,117719,WBA1J7C51FV834708,336016
-380034,Lynsey Deare,"7197 Loftsgordon Road_Norfolk, Virginia 23504",757-282-4349,F,141302,JM1NC2NF5E0440387,752447
-843375,Marthe Koppke,"40523 Superior Alley_Atlanta, Georgia 31190",404-775-0216,F,153388,1G6DS1ED4B0029925,168263
-778667,Kellyann Cran,"74 Pine View Road_Laurel, Maryland 20709",301-525-4979,F,195895,1N6AA0CC7CN082515,501967
-114408,Tyler Wormhole,"507 Toban Point_Roanoke, Virginia 24004",540-932-6261,M,158461,KNAFZ6A38F5035213,929272
-771774,Louis Fallows,"496 Ridge Oak Avenue_Hicksville, New York 11854",516-315-3083,M,173675,WAU2MAFC3FN941228,102067
-670853,Brad Butts,"4 Lawn Center_Portsmouth, New Hampshire 03804",603-459-1079,M,45731,SCBLC37F14C322850,838742
-925919,Ofilia Silson,"02971 Roth Place_Philadelphia, Pennsylvania 19109",267-249-4648,F,155180,3D7TP2HT9AG730351,577280
-858079,Louella Koene,"8201 Transport Center,Los Angeles,California",323-548-1912,F,167066,5LMJJ3H57CE239824,236188
-883370,Charin Mansbridge,"56421 Norway Maple Junction,Colorado Springs,Colorado",719-482-9881,F,120257,WAU3GAFD7FN858373,781880
-947041,Leola Smickle,"0562 Waywood Parkway,Hartford,Connecticut",860-355-2416,F,51780,3D7LT2ET2AG980823,336016
-757086,Jerome Yoxen,"09973 4th Court,Round Rock,Texas",512-733-9810,M,37769,3VW467AT4CM940219,752447
-100756,Dorry Rewan,"00876 Southridge Street,Richmond,Virginia",804-371-5819,F,63072,3D7TP2CT6BG558188,168263
-451077,Fernandina Casaccia,"7497 Caliangt Avenue,Oklahoma City,Oklahoma",405-393-9772,F,59454,1D7RW3BK0BS153447,501967
-782283,Clare Birch,"3619 Kings Point,Fort Wayne,Indiana",260-697-2790,M,75147,4USCN33422L904149,929272
-325446,Kienan Girone,"308 Monterey Circle,Midland,Michigan",989-553-7500,M,170929,3D73M4HL1BG770073,102067
-328191,Prisca Northedge,"7 Gulseth Street,Washington,District of Columbia",202-204-3474,F,94975,JN1BY1AR9EM022974,838742
-406859,Adriena Jozwik,"66 Randy Alley,San Antonio,Texas",210-684-6962,F,185543,4A31K5DF2CE460839,577280
-784662,Cleo Bertson,"455 Duke Parkway,Asheville,North Carolina",828-597-8548,F,147752,JN1CV6AP4AM899584,236188
-878664,Siegfried Vile,"27 Burning Wood Street,Washington,District of Columbia",202-578-0416,M,64053,WAU2GBFCXDN840701,781880
-589529,Wilie Bilney,"8 Anzinger Crossing,Stamford,Connecticut",203-504-6952,F,60853,5N1AR2MM7EC265308,336016
-242151,Berna Cousins,"3049 Toban Drive,Alhambra,California",626-434-4807,F,190343,5UXWX9C53E0827398,752447
-838696,Adam Plume,"09946 Pierstorff Terrace,Idaho Falls,Idaho",208-830-8394,M,104257,1G6DM57T460515226,168263
-362360,Tonnie Chaston,"86242 Nelson Parkway,Redwood City,California",650-245-6411,M,160805,2B3CA8CT5AH889035,501967
-618072,Leeanne Pestell,"6 Crownhardt Terrace,Tucson,Arizona",520-383-8283,F,156696,VNKKTUD30FA904873,929272
-907451,Audi Girogetti,"61 Kedzie Pass,San Antonio,Texas",210-999-7361,F,141357,1GYEE437790047086,102067
-178699,Pierrette Godfray,"03 Village Green Parkway,Baltimore,Maryland",410-156-3136,F,31714,WBXPA93425W057211,838742
-667269,Mikaela Limbrick,"89411 Fairfield Pass,Irvine,California",949-377-1403,F,95302,1D7RV1GP4AS805903,577280
-575756,Niki McDougle,"21 Oriole Center,South Bend,Indiana",574-570-6835,F,147005,JTDKN3DP5F3630932,236188
-961754,Cathie Faircloth,"76022 Magdeline Trail,Colorado Springs,Colorado",719-707-0502,F,146381,1FTWW3B52AE922225,781880
-513508,Mattie Izat,"54 Shelley Plaza,Fort Pierce,Florida",772-531-2336,F,92064,1FTSW3A52AE617565,336016
-556009,Melania Lambersen,"38183 Westend Court,Spartanburg,South Carolina",864-796-7480,F,64723,WBALM5C56BE317659,752447
-479546,Roderick Artindale,"750 Stuart Drive,Yonkers,New York",914-631-1164,M,87682,JHMZF1C69FS883586,168263
-176267,Kilian Wilsee,"674 Westridge Hill,Panama City,Florida",850-397-1129,M,45451,1GD01ZCG9DF704710,501967
-586600,Kirbee Spenceley,"93 Reindahl Street,New Haven,Connecticut",203-763-9319,F,60617,5UXFG2C56DL927743,929272
-591142,Cecily Gobel,"790 Hanover Circle,New Orleans,Louisiana",504-395-5202,F,46142,3GYFK52289G568970,102067
-330298,Ami Linnell,"94 Swallow Place,Houston,Texas",832-108-1464,F,189127,WBAVB73548K479939,838742
-893854,Jeffry Kelshaw,"4295 Fair Oaks Lane,Portland,Oregon",503-732-0548,M,76349,JH4CW2H69CC952397,577280
-308869,Luther Greim,"4295 Hoffman Crossing,Salt Lake City,Utah",801-662-5819,M,171323,KNAFU6A27B5975504,236188
-850192,Shem Gaskarth,"73943 Pepper Wood Center,Lexington,Kentucky",859-795-6559,M,156192,3GYFK66N65G236885,781880
-930732,Giacopo Restall,"97478 Sauthoff Junction,Memphis,Tennessee",901-894-8656,M,166606,JN1AZ4EH7BM452073,336016
-498037,Dorie Obell,"209 Loftsgordon Drive,Ocala,Florida",352-888-0201,M,193103,1FTMF1C87AK606650,752447
-264754,Bart Pace,"549 Dottie Alley,Brooklyn,New York",718-368-0881,M,163962,WAULD64B34N085776,168263
-455939,Reamonn MacGillespie,"86 Weeping Birch Place,Utica,New York",315-289-4226,M,199679,4T1BF1FK7FU308995,501967
-601866,Elvin Trowle,"88270 Talmadge Street,Columbus,Ohio",614-165-0459,M,52556,1YVHZ8BAXA5175299,929272
-640445,Meggy Phillp,"01 North Parkway,Columbus,Georgia",706-154-3822,F,39108,1G4HR54K44U040237,102067
-777989,Fielding Feyer,"2 Claremont Way,Charleston,West Virginia",304-544-5935,M,170608,1FMJK1F55AE534504,838742
-873442,Xena Momford,"54 Dexter Park,Fresno,California",209-788-5425,F,117532,JH4DC54812C395697,577280
-876592,Jory Dullaghan,"99 Muir Place,Gainesville,Georgia",678-239-9373,M,194651,,236188
-414933,Glynn Heathcott,"138 Lien Parkway,Staten Island,New York",914-114-6693,M,118359,,781880
-759244,Wylma Yurenev,"796 Washington Avenue,Houston,Texas",281-738-1786,F,151585,,336016
-232100,Garret Haire,"3 5th Pass,Lexington,Kentucky",859-702-0185,M,55504,,752447
-717853,Elisha Skitterel,"3925 Badeau Way,Youngstown,Ohio",330-156-7659,F,108702,,168263
-514805,Freddi Fabri,"587 Cascade Way,Albany,New York",518-649-0572,F,55842,,501967
-963635,Tris Berdale,"17210 Northfield Plaza,Lubbock,Texas",806-658-9758,M,186310,,929272
-995705,Cathyleen Koubu,"9 Cascade Junction,San Diego,California",858-361-6374,F,65397,,102067
-620515,Ab Jordan,"4164 Shopko Way,Virginia Beach,Virginia",757-818-1900,M,167200,,838742
-673855,Tyson Oxe,"4061 Shasta Parkway,Louisville,Kentucky",502-906-2369,M,188025,,577280
-129257,Ellene Irons,"50 Sunfield Way,Brooklyn,New York",718-407-2273,F,130699,,236188
-789880,Trula Shieldon,"767 Graedel Alley,Brea,California",818-257-6460,F,114204,,781880
-366146,Karisa Emptage,"4816 Burning Wood Circle,Houston,Texas",713-193-1119,F,134405,,336016
-564513,Jobey Errigo,"76 Westridge Junction,Richmond,Virginia",804-121-1497,F,192763,,752447
-423287,Flory Last,"7 Reinke Trail,Detroit,Michigan",586-561-6004,F,148928,,168263
-884679,Gaylor Pleasaunce,"01 Stoughton Way,Fresno,California",559-484-9214,M,192087,,501967
-517921,Vyky Velde,"3785 International Plaza,Richmond,Virginia",804-444-4311,F,38214,,929272
-178612,Xylia Gillson,"87 Melby Court,Portland,Oregon",503-253-3774,F,179545,,102067
-778822,Daven Arpin,"16045 Morningstar Park,Pensacola,Florida",850-554-7909,M,38229,,838742
-806034,Moina Moppett,"3 Columbus Center,El Paso,Texas",915-740-7500,F,197341,,577280
-901001,Candy Bischop,"7 Lakeland Point,Oakland,California",510-870-3197,F,55894,,236188
-380855,Courtnay Ralling,"1867 Del Mar Crossing,Arlington,Virginia",703-375-3911,F,179553,,781880
-887218,Westbrooke Durbin,"390 Bultman Avenue,Hialeah,Florida",305-589-3959,M,153533,,336016
-795809,Allayne Renehan,"12 Ronald Regan Hill,Pittsburgh,Pennsylvania",412-858-9894,M,192501,,752447
-311907,Mareah Goymer,"4512 Harper Place,Glendale,Arizona",602-813-3122,F,172655,,168263
-940128,Nadean Canada,"10 Blue Bill Park Terrace,Manassas,Virginia",434-237-6498,F,117494,,501967
-624277,Michele Copping,"29 Kingsford Crossing,San Francisco,California",415-451-7956,F,192180,,929272
-460171,Adora Robinson,"7 Pleasure Way,Providence,Rhode Island",401-682-0894,F,195212,,102067
-886564,Moyna Djordjevic,"26 Susan Center,Bethesda,Maryland",240-610-1819,F,126602,,838742
-555483,Waly Steventon,"90 Claremont Parkway,Washington,District of Columbia",202-648-0713,F,162787,,577280
-826987,Suzette Fradgley,"30436 Montana Trail,Newark,Delaware",302-951-8038,F,112743,,236188
-595610,Danice Goodson,"81 Arkansas Hill,Houston,Texas",713-835-4384,F,121253,,781880
-927955,Benito Rucklesse,"48 Fremont Circle,Portland,Oregon",503-204-2135,M,81146,,336016
-899488,Sloane Dougary,"0 Westridge Road,Chattanooga,Tennessee",423-935-5302,M,64328,,752447
-933321,Dionis Bannell,"82718 Commercial Pass,Salinas,California",831-387-9064,F,146758,,168263
-681243,Cornela Jeannot,"3432 Service Road,Arlington,Texas",214-503-2981,F,159848,,501967
-773185,Freddi Hyam,"54721 Sachs Lane,Tampa,Florida",813-840-5961,F,90171,,929272
-330851,Walton Ziems,"1611 Scoville Alley,Springfield,Missouri",417-652-3596,M,133068,,102067
-335385,Shoshana Alpes,"7589 Hoepker Junction,Fresno,California",559-258-9114,F,195245,,838742
-978505,Aline Swatheridge,"10495 Ramsey Drive,Palatine,Illinois",847-396-6230,F,57370,,577280
-229038,Eleanor Cheatle,"58347 Sunbrook Parkway,Lancaster,Pennsylvania",717-477-5744,F,121092,,236188
-317234,Carleen Daubney,"02 Bluestem Hill,Rockford,Illinois",815-594-9511,F,125944,,781880
-952086,Augustin Howford,"24883 Scofield Lane,Washington,District of Columbia",202-444-9813,M,141574,,336016
-893499,Corabella Brunotti,"4 Clarendon Lane,Fort Wayne,Indiana",260-534-9451,F,55497,,752447
-779324,Lamar Petroselli,"21845 Amoth Place,Macon,Georgia",478-209-2719,M,118707,,168263
-951568,Prisca Goggin,"0 Burning Wood Center,Lexington,Kentucky",859-516-8835,F,90501,,501967
-322054,Paulita Vasentsov,"6001 Tomscot Court,Richmond,Virginia",804-997-2414,F,47584,,929272
-736810,Carri Ianne,"27630 Anhalt Trail,Mobile,Alabama",251-706-0474,F,126922,,102067
-819545,Lind Wale,"21 Dovetail Place,Whittier,California",562-111-5631,F,70046,,838742
-967130,Michaella Deering,"8079 Mesta Crossing,Inglewood,California",310-672-2071,F,81234,,577280
+950350,Bob Johnson,"0468 Talisman Hill_Pompano Beach FL 33075",754-602-2175,M,144666,4F3GJ47D55S879673,236188
+901794,John Johnson,"45067 Spohn Parkway_Salt Lake City Utah 84125",801-222-7270,M,196762,JTEBU5JR8C5664993,781880
+487147,Goldia Marshallsay,"9854 Hoard Way_Winstom Salem NC 27116",336-803-6044,F,117719,WBA1J7C51FV834708,336016
+380034,Lynsey Deare,"7197 Loftsgordon Road_Norfolk Virginia 23504",757-282-4349,F,141302,JM1NC2NF5E0440387,752447
+843375,Marthe Koppke,"40523 Superior Alley_Atlanta Georgia 31190",404-775-0216,F,153388,1G6DS1ED4B0029925,168263
+778667,Kellyann Cran,"74 Pine View Road_Laurel Maryland 20709",301-525-4979,F,195895,1N6AA0CC7CN082515,501967
+114408,Tyler Wormhole,"507 Toban Point_Roanoke Virginia 24004",540-932-6261,M,158461,KNAFZ6A38F5035213,929272
+771774,Louis Fallows,"496 Ridge Oak Avenue_Hicksville New York 11854",516-315-3083,M,173675,WAU2MAFC3FN941228,102067
+670853,Brad Butts,"4 Lawn Center_Portsmouth New Hampshire 03804",603-459-1079,M,45731,SCBLC37F14C322850,838742
+925919,Ofilia Silson,"02971 Roth Place_Philadelphia Pennsylvania 19109",267-249-4648,F,155180,3D7TP2HT9AG730351,577280
+858079,Louella Koene,"8201 Transport Center,Los AngelesCalifornia",323-548-1912,F,167066,5LMJJ3H57CE239824,236188
+883370,Charin Mansbridge,"56421 Norway Maple Junction Colorado Springs Colorado",719-482-9881,F,120257,WAU3GAFD7FN858373,781880
+947041,Leola Smickle,"0562 Waywood Parkway Hartford Connecticut",860-355-2416,F,51780,3D7LT2ET2AG980823,336016
+757086,Jerome Yoxen,"09973 4th Court Round Rock Texas",512-733-9810,M,37769,3VW467AT4CM940219,752447
+100756,Dorry Rewan,"00876 Southridge Street Richmond,Virginia",804-371-5819,F,63072,3D7TP2CT6BG558188,168263
+451077,Fernandina Casaccia,"7497 Caliangt Avenue Oklahoma City,Oklahoma",405-393-9772,F,59454,1D7RW3BK0BS153447,501967
+782283,Clare Birch,"3619 Kings Point Fort Wayne Indiana",260-697-2790,M,75147,4USCN33422L904149,929272
+325446,Kienan Girone,"308 Monterey Circle Midland Michigan",989-553-7500,M,170929,3D73M4HL1BG770073,102067
+328191,Prisca Northedge,"7 Gulseth Street Washington District of Columbia",202-204-3474,F,94975,JN1BY1AR9EM022974,838742
+406859,Adriena Jozwik,"66 Randy Alley San Antonio Texas",210-684-6962,F,185543,4A31K5DF2CE460839,577280
+784662,Cleo Bertson,"455 Duke Parkway Asheville North Carolina",828-597-8548,F,147752,JN1CV6AP4AM899584,236188
+878664,Siegfried Vile,"27 Burning Wood Street Washington,District of Columbia",202-578-0416,M,64053,WAU2GBFCXDN840701,781880
+589529,Wilie Bilney,"8 Anzinger Crossing Stamford Connecticut",203-504-6952,F,60853,5N1AR2MM7EC265308,336016
+242151,Berna Cousins,"3049 Toban Drive Alhambra California",626-434-4807,F,190343,5UXWX9C53E0827398,752447
+838696,Adam Plume,"09946 Pierstorff Terrace Idaho Falls Idaho",208-830-8394,M,104257,1G6DM57T460515226,168263
+362360,Tonnie Chaston,"86242 Nelson Parkway Redwood City California",650-245-6411,M,160805,2B3CA8CT5AH889035,501967
+618072,Leeanne Pestell,"6 Crownhardt Terrace Tucson Arizona",520-383-8283,F,156696,VNKKTUD30FA904873,929272
+907451,Audi Girogetti,"61 Kedzie Pass San Antonio Texas",210-999-7361,F,141357,1GYEE437790047086,102067
+178699,Pierrette Godfray,"03 Village Green Parkway Baltimore,Maryland",410-156-3136,F,31714,WBXPA93425W057211,838742
+667269,Mikaela Limbrick,"89411 Fairfield Pass Irvine California",949-377-1403,F,95302,1D7RV1GP4AS805903,577280
+575756,Niki McDougle,"21 Oriole Center South Bend Indiana",574-570-6835,F,147005,JTDKN3DP5F3630932,236188
+961754,Cathie Faircloth,"76022 Magdeline Trail Colorado Springs Colorado",719-707-0502,F,146381,1FTWW3B52AE922225,781880
+513508,Mattie Izat,"54 Shelley Plaza Fort Pierce Florida",772-531-2336,F,92064,1FTSW3A52AE617565,336016
+556009,Melania Lambersen,"38183 Westend Court Spartanburg South Carolina",864-796-7480,F,64723,WBALM5C56BE317659,752447
+479546,Roderick Artindale,"750 Stuart Drive Yonkers New York",914-631-1164,M,87682,JHMZF1C69FS883586,168263
+176267,Kilian Wilsee,"674 Westridge Hill Panama City Florida",850-397-1129,M,45451,1GD01ZCG9DF704710,501967
+586600,Kirbee Spenceley,"93 Reindahl Street New Haven Connecticut",203-763-9319,F,60617,5UXFG2C56DL927743,929272
+591142,Cecily Gobel,"790 Hanover Circle New Orleans Louisiana",504-395-5202,F,46142,3GYFK52289G568970,102067
+330298,Ami Linnell,"94 Swallow Place Houston Texas",832-108-1464,F,189127,WBAVB73548K479939,838742
+893854,Jeffry Kelshaw,"4295 Fair Oaks Lane Portland Oregon",503-732-0548,M,76349,JH4CW2H69CC952397,577280
+308869,Luther Greim,"4295 Hoffman Crossing Salt Lake City Utah",801-662-5819,M,171323,KNAFU6A27B5975504,236188
+850192,Shem Gaskarth,"73943 Pepper Wood Center Lexington Kentucky",859-795-6559,M,156192,3GYFK66N65G236885,781880
+930732,Giacopo Restall,"97478 Sauthoff Junction Memphis Tennessee",901-894-8656,M,166606,JN1AZ4EH7BM452073,336016
