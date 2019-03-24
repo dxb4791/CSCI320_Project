@@ -19,16 +19,32 @@ public class WelcomeView implements View {
         System.out.println("Enter the title or [] Prefix of your role:");
         String input = in.next();
         if(input.length() == 0){
-            input = "q";
+            input = "Q";
         }
         char prefix = input.charAt(0);
-        Character.toUpperCase(prefix);
+        prefix = Character.toUpperCase(prefix);
         switch (prefix){
             case 'S':
                 System.out.println("Manufacture employee");
                 ManufactureView mv = new ManufactureView();
                 mv.run();
                 break;
+            case 'D':
+                System.out.println("Dealer employee");
+                //DealerView dv = new DealerView();
+                //dv.run();
+                break;
+            case 'C':
+                System.out.println("Customer");
+                //CustomerView cv = new CustomerView();
+                //cv.run();
+                break;
+            case 'Q':
+                System.out.println("Quit application");
+                return;
+            default:
+                System.out.println("Invalid prefix entered");
+                return;
         }
     }
 
