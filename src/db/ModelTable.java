@@ -1,6 +1,4 @@
-/**
- * Created by ceo on 3/23/2019.
- */
+package db;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,35 +9,41 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class MakeTable {
-
-    public static void populateMakeTableFromCSV(Connection conn, String filename) throws SQLException{
-        ArrayList<Make> makes = new ArrayList<>();
+/**
+ * handles the table and queries for the model
+ * @author dxb4791
+ */
+public class ModelTable {
+    public static void populateModelTableFromCSV(Connection conn, String filename) throws SQLException {
+        ArrayList<Model> model = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
             while ((line = br.readLine()) != null){
                 String[] split = line.split(",");
-                makes.add(new Make(split));
+                model.add(new Model(split));
             }
             br.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        String sql = createMakeInsertSQL(makes);
+        String sql = createModelInsertSQL(model);
 
         Statement statement = conn.createStatement();
         statement.execute(sql);
     }
 
-    public static void createMakeTable(Connection conn){
-
+    /**
+     * creates a table in H2 of the model
+     * @param conn established connection
+     */
+    public static void createModelTable(Connection conn){
         try {
-            String query = "CREATE TABLE IF NOT EXISTS make("
-                    + "MAKENAME VARCHAR(255) PRIMARY KEY,"
-                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
-                    + ");";
+            String query = "CREATE TABLE IF NOT EXISTS model("
+                    + "NAME VARCHAR(255) PRIMARY KEY,"
+                    + "YEAR VARCHAR(255),"+"CLASS VARCHAR(255),"+ "SEATS VARCHAR(255)," +"DOORS VARCHAR(255),"
+                    +"MAKENAME VARCHAR(255),"+ ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
         }catch (SQLException e){
@@ -47,9 +51,19 @@ public class MakeTable {
         }
     }
 
-    public static void addPerson(Connection conn, String makename, String model,String D_ID){
-        String query = String.format("INSERT INTO make "
-                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
+    /**
+     * add a model to the database
+     * @param conn established connection
+     * @param name name
+     * @param year year
+     * @param c_class class
+     * @param seats number of seats
+     * @param doors number of doors
+     * @param makeName name of the make
+     */
+    public static void addModel(Connection conn, String name, String year, String c_class, String seats, String doors, String makeName){
+        String query = String.format("INSERT INTO model "
+                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", name, year,c_class,seats,doors,makeName);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -59,13 +73,13 @@ public class MakeTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of make
+     * This creates an sql statement to do a bulk add of model
      *
-     * @param makes: list of make objects to add
+     * @param model: list of model objects to add
      *
      * @return
      */
-    public static String createMakeInsertSQL(ArrayList<Make> makes){
+    public static String createModelInsertSQL(ArrayList<Model> model){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -74,7 +88,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
+        sb.append("INSERT INTO model (name, year,class,seats,doors,makeName) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -83,11 +97,12 @@ public class MakeTable {
          *
          * If it is the last person add a semi-colon to end the statement
          */
-        for(int i = 0; i < makes.size(); i++){
-            Make m = makes.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
-                    m.getMakename(), m.getModel(),m.getD_ID()));
-            if( i != makes.size()-1){
+        for(int i = 0; i < model.size(); i++){
+            Model m = model.get(i);
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
+                    m.getName(),m.getYear(),m.getC_class(),m.getSeats(),m.getDoors()
+                    ,m.getMakename()));
+            if( i != model.size()-1){
                 sb.append(",");
             }
             else{
@@ -106,9 +121,9 @@ public class MakeTable {
      * @param whereClauses: conditions to limit query by
      * @return
      */
-    public static ResultSet queryMakeTable(Connection conn,
-                                             ArrayList<String> columns,
-                                             ArrayList<String> whereClauses){
+    public static ResultSet queryModelTable(Connection conn,
+                                           ArrayList<String> columns,
+                                           ArrayList<String> whereClauses){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -139,7 +154,7 @@ public class MakeTable {
         /**
          * Tells it which table to get the data from
          */
-        sb.append("FROM make ");
+        sb.append("FROM model ");
 
         /**
          * If we gave it conditions append them
@@ -180,22 +195,24 @@ public class MakeTable {
      * Queries and print the table
      * @param conn
      */
-    public static void printMakeTable(Connection conn){
-        String query = "SELECT * FROM make;";
+    public static void printModelTable(Connection conn){
+        String query = "SELECT * FROM model;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Make %s: %s: %s  \n",
+                System.out.printf("db.Model %s: %s: %s: %s: %s: %s \n",
                         result.getString(1),
                         result.getString(2),
-                        result.getString(3));
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
-
 }

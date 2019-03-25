@@ -1,3 +1,7 @@
+package db; /**
+ * Created by ceo on 3/23/2019.
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,41 +11,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * handles the h2 options table and queries
- * @author dxb4791
- */
-public class OptionsTable {
-    public static void populateOptionsTableFromCSV(Connection conn, String filename) throws SQLException {
-        ArrayList<Options> options = new ArrayList<>();
+public class MakeTable {
+
+    public static void populateMakeTableFromCSV(Connection conn, String filename) throws SQLException{
+        ArrayList<Make> makes = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
             while ((line = br.readLine()) != null){
                 String[] split = line.split(",");
-                options.add(new Options(split));
+                makes.add(new Make(split));
             }
             br.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        String sql = createOptionsInsertSQL(options);
+        String sql = createMakeInsertSQL(makes);
 
         Statement statement = conn.createStatement();
         statement.execute(sql);
     }
 
-    /**
-     * create options table
-     * @param conn established connection
-     */
-    public static void createOptionsTable(Connection conn){
+    public static void createMakeTable(Connection conn){
+
         try {
-            String query = "CREATE TABLE IF NOT EXISTS options("
-                    + "o_id VARCHAR(255) PRIMARY KEY,"
-                    + "TRANSMISSION VARCHAR(255),"+"COLOR VARCHAR(255),"+"ENGINE VARCHAR(255),"+"DRIVE VARCHAR(255)," +
-                    "INTERIOR VARCHAR(255),"
+            String query = "CREATE TABLE IF NOT EXISTS make("
+                    + "MAKENAME VARCHAR(255) PRIMARY KEY,"
+                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -50,21 +47,9 @@ public class OptionsTable {
         }
     }
 
-    /**
-     * add an option to the database
-     * @param conn established connection
-     * @param o_id option id
-     * @param transmission
-     * @param color
-     * @param engine
-     * @param drive
-     * @param interior
-     */
-    public static void addOptions(Connection conn, String o_id,String transmission,String color, String engine,
-                                  String drive,String interior){
-        String query = String.format("INSERT INTO options "
-                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", o_id,transmission,color, engine,
-                drive, interior);
+    public static void addPerson(Connection conn, String makename, String model,String D_ID){
+        String query = String.format("INSERT INTO make "
+                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -74,13 +59,13 @@ public class OptionsTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of option
+     * This creates an sql statement to do a bulk add of make
      *
-     * @param options: list of option objects to add
+     * @param makes: list of make objects to add
      *
      * @return
      */
-    public static String createOptionsInsertSQL(ArrayList<Options> options){
+    public static String createMakeInsertSQL(ArrayList<Make> makes){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -89,8 +74,7 @@ public class OptionsTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO options (o_id,transmission,color, engine,\n" +
-                "                drive, interior) VALUES");
+        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -99,11 +83,11 @@ public class OptionsTable {
          *
          * If it is the last person add a semi-colon to end the statement
          */
-        for(int i = 0; i < options.size(); i++){
-            Options o = options.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
-                    o.getO_id(), o.getTransmission(),o.getColor(),o.getEngine(),o.getDrive(),o.getInterior()));
-            if( i != options.size()-1){
+        for(int i = 0; i < makes.size(); i++){
+            Make m = makes.get(i);
+            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
+                    m.getMakename(), m.getModel(),m.getD_ID()));
+            if( i != makes.size()-1){
                 sb.append(",");
             }
             else{
@@ -114,7 +98,7 @@ public class OptionsTable {
     }
 
     /**
-     * Makes a query to the option table
+     * Makes a query to the make table
      * with given columns and conditions
      *
      * @param conn
@@ -122,9 +106,9 @@ public class OptionsTable {
      * @param whereClauses: conditions to limit query by
      * @return
      */
-    public static ResultSet queryOptionsTable(Connection conn,
-                                           ArrayList<String> columns,
-                                           ArrayList<String> whereClauses){
+    public static ResultSet queryMakeTable(Connection conn,
+                                             ArrayList<String> columns,
+                                             ArrayList<String> whereClauses){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -155,7 +139,7 @@ public class OptionsTable {
         /**
          * Tells it which table to get the data from
          */
-        sb.append("FROM options ");
+        sb.append("FROM make ");
 
         /**
          * If we gave it conditions append them
@@ -196,17 +180,17 @@ public class OptionsTable {
      * Queries and print the table
      * @param conn
      */
-    public static void printOptionsTable(Connection conn){
-        String query = "SELECT * FROM options;";
+    public static void printMakeTable(Connection conn){
+        String query = "SELECT * FROM make;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Options %s: %s: %s: %s: %s: %s \n",
+                System.out.printf("db.Make %s: %s: %s  \n",
                         result.getString(1),
-                        result.getString(2),result.getString(3),result.getString(4),
-                        result.getString(5),result.getString(6));
+                        result.getString(2),
+                        result.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();

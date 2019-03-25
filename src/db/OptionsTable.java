@@ -1,3 +1,5 @@
+package db;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,40 +10,41 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * handles the table and queries for the model
+ * handles the h2 options table and queries
  * @author dxb4791
  */
-public class ModelTable {
-    public static void populateModelTableFromCSV(Connection conn, String filename) throws SQLException {
-        ArrayList<Model> model = new ArrayList<>();
+public class OptionsTable {
+    public static void populateOptionsTableFromCSV(Connection conn, String filename) throws SQLException {
+        ArrayList<Options> options = new ArrayList<>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             String line;
             while ((line = br.readLine()) != null){
                 String[] split = line.split(",");
-                model.add(new Model(split));
+                options.add(new Options(split));
             }
             br.close();
         } catch (IOException e){
             e.printStackTrace();
         }
 
-        String sql = createModelInsertSQL(model);
+        String sql = createOptionsInsertSQL(options);
 
         Statement statement = conn.createStatement();
         statement.execute(sql);
     }
 
     /**
-     * creates a table in H2 of the model
+     * create options table
      * @param conn established connection
      */
-    public static void createModelTable(Connection conn){
+    public static void createOptionsTable(Connection conn){
         try {
-            String query = "CREATE TABLE IF NOT EXISTS model("
-                    + "NAME VARCHAR(255) PRIMARY KEY,"
-                    + "YEAR VARCHAR(255),"+"CLASS VARCHAR(255),"+ "SEATS VARCHAR(255)," +"DOORS VARCHAR(255),"
-                    +"MAKENAME VARCHAR(255),"+ ");";
+            String query = "CREATE TABLE IF NOT EXISTS options("
+                    + "o_id VARCHAR(255) PRIMARY KEY,"
+                    + "TRANSMISSION VARCHAR(255),"+"COLOR VARCHAR(255),"+"ENGINE VARCHAR(255),"+"DRIVE VARCHAR(255)," +
+                    "INTERIOR VARCHAR(255),"
+                    + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
         }catch (SQLException e){
@@ -50,18 +53,20 @@ public class ModelTable {
     }
 
     /**
-     * add a model to the database
+     * add an option to the database
      * @param conn established connection
-     * @param name name
-     * @param year year
-     * @param c_class class
-     * @param seats number of seats
-     * @param doors number of doors
-     * @param makeName name of the make
+     * @param o_id option id
+     * @param transmission
+     * @param color
+     * @param engine
+     * @param drive
+     * @param interior
      */
-    public static void addModel(Connection conn, String name, String year, String c_class, String seats, String doors, String makeName){
-        String query = String.format("INSERT INTO model "
-                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", name, year,c_class,seats,doors,makeName);
+    public static void addOptions(Connection conn, String o_id,String transmission,String color, String engine,
+                                  String drive,String interior){
+        String query = String.format("INSERT INTO options "
+                + "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');", o_id,transmission,color, engine,
+                drive, interior);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -71,13 +76,13 @@ public class ModelTable {
     }
 
     /**
-     * This creates an sql statement to do a bulk add of model
+     * This creates an sql statement to do a bulk add of option
      *
-     * @param model: list of model objects to add
+     * @param options: list of option objects to add
      *
      * @return
      */
-    public static String createModelInsertSQL(ArrayList<Model> model){
+    public static String createOptionsInsertSQL(ArrayList<Options> options){
         StringBuilder sb = new StringBuilder();
 
         /**
@@ -86,7 +91,8 @@ public class ModelTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO model (name, year,class,seats,doors,makeName) VALUES");
+        sb.append("INSERT INTO options (o_id,transmission,color, engine,\n" +
+                "                drive, interior) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -95,12 +101,11 @@ public class ModelTable {
          *
          * If it is the last person add a semi-colon to end the statement
          */
-        for(int i = 0; i < model.size(); i++){
-            Model m = model.get(i);
+        for(int i = 0; i < options.size(); i++){
+            Options o = options.get(i);
             sb.append(String.format("(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",
-                    m.getName(),m.getYear(),m.getC_class(),m.getSeats(),m.getDoors()
-                    ,m.getMakename()));
-            if( i != model.size()-1){
+                    o.getO_id(), o.getTransmission(),o.getColor(),o.getEngine(),o.getDrive(),o.getInterior()));
+            if( i != options.size()-1){
                 sb.append(",");
             }
             else{
@@ -111,7 +116,7 @@ public class ModelTable {
     }
 
     /**
-     * Makes a query to the make table
+     * Makes a query to the option table
      * with given columns and conditions
      *
      * @param conn
@@ -119,7 +124,7 @@ public class ModelTable {
      * @param whereClauses: conditions to limit query by
      * @return
      */
-    public static ResultSet queryModelTable(Connection conn,
+    public static ResultSet queryOptionsTable(Connection conn,
                                            ArrayList<String> columns,
                                            ArrayList<String> whereClauses){
         StringBuilder sb = new StringBuilder();
@@ -152,7 +157,7 @@ public class ModelTable {
         /**
          * Tells it which table to get the data from
          */
-        sb.append("FROM model ");
+        sb.append("FROM options ");
 
         /**
          * If we gave it conditions append them
@@ -193,24 +198,22 @@ public class ModelTable {
      * Queries and print the table
      * @param conn
      */
-    public static void printModelTable(Connection conn){
-        String query = "SELECT * FROM model;";
+    public static void printOptionsTable(Connection conn){
+        String query = "SELECT * FROM options;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Model %s: %s: %s: %s: %s: %s \n",
+                System.out.printf("db.Options %s: %s: %s: %s: %s: %s \n",
                         result.getString(1),
-                        result.getString(2),
-                        result.getString(3),
-                        result.getString(4),
-                        result.getString(5),
-                        result.getString(6));
+                        result.getString(2),result.getString(3),result.getString(4),
+                        result.getString(5),result.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
+
 }

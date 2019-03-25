@@ -10,7 +10,7 @@ public class CustomerView implements View {
     @Override
     public void run() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Welcome Customer!");
+        System.out.println("Welcome db.Customer!");
         System.out.println("Where would you like to go?");
         System.out.println("- [V]ehicle page");
         System.out.println("- [B]uy a vehicle page");
@@ -29,7 +29,7 @@ public class CustomerView implements View {
                 cbv.run();
                 break;
             case 'V':
-                System.out.println("Vehicle page");
+                System.out.println("db.Vehicle page");
                 CustomerVehicleView cvv = new CustomerVehicleView();
                 cvv.run();
                 break;

@@ -1,3 +1,5 @@
+package db;
+
 /**
  * Class for the dealer
  * @author dxb4791

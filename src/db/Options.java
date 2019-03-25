@@ -1,3 +1,5 @@
+package db;
+
 /**
  * options class provides implementation of the option attribute
  * @author dxb4791

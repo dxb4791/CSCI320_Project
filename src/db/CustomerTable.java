@@ -1,3 +1,5 @@
+package db;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -214,7 +216,7 @@ public class CustomerTable {
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("Customer %s: %s: %s: %s: %s: %s: %s: %s \n",
+                System.out.printf("db.Customer %s: %s: %s: %s: %s: %s: %s: %s \n",
                         result.getString(1),
                         result.getString(2),
                         result.getString(3),

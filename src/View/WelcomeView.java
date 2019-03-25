@@ -31,12 +31,12 @@ public class WelcomeView implements View {
                 mv.run();
                 break;
             case 'D':
-                System.out.println("Dealer employee");
+                System.out.println("db.Dealer employee");
                 DealerView dv = new DealerView();
                 dv.run();
                 break;
             case 'C':
-                System.out.println("Customer");
+                System.out.println("db.Customer");
                 CustomerView cv = new CustomerView();
                 cv.run();
                 break;

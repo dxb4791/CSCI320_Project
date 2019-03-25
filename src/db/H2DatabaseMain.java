@@ -1,3 +1,5 @@
+package db;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -113,7 +115,7 @@ public class H2DatabaseMain {
              * you want
              */
             while(results.next()){
-                System.out.printf("\tMake %s: %s\n",
+                System.out.printf("\tdb.Make %s: %s\n",
                         results.getString(1),
                         results.getString(2));
             }
@@ -158,7 +160,7 @@ public class H2DatabaseMain {
                     columns,
                     whereClauses);
             while(results2.next()){
-                System.out.printf("\tMake %s: %s\n",
+                System.out.printf("\tdb.Make %s: %s\n",
                         results2.getString(1),
                         results2.getString(2));
             }
@@ -196,7 +198,7 @@ public class H2DatabaseMain {
              * you want
              */
             while(mresults.next()){
-                System.out.printf("\tCustomer %s: %s\n",
+                System.out.printf("\tdb.Customer %s: %s\n",
                         mresults.getString(1),
                         mresults.getString(2));
             }

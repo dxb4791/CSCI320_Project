@@ -1,5 +1,7 @@
+package db;
+
 /**
- * Vehicle attribute implementation
+ * db.Vehicle attribute implementation
  * @author dxb4791
  */
 public class Vehicle {

@@ -1,3 +1,5 @@
+package db;
+
 /**
  * class that handles the model attribute
  * @author dxb4791
@@ -12,7 +14,7 @@ public class Model {
     private final String make_name;
 
     /**
-     * regular Model constructor
+     * regular db.Model constructor
      * @param Name name of the model
      * @param year year of the model
      * @param c_class class of the car coupe, van ,..etc.
