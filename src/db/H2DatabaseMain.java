@@ -187,6 +187,27 @@ public class H2DatabaseMain {
                     new ArrayList<String>(),
                     new ArrayList<String>());
 
+            DealerTable.createDealerTable(demo.getConnection());
+            DealerTable.populateDealerTableFromCSV(
+                    demo.getConnection(),
+                    "dealer.csv");
+            ResultSet dresults = MakeTable.queryMakeTable(
+                    demo.getConnection(),
+                    new ArrayList<String>(),
+                    new ArrayList<String>());
+            ModelTable.createModelTable(demo.getConnection());
+            ModelTable.populateModelTableFromCSV(
+                    demo.getConnection(),
+                    "model.csv");
+            OptionsTable.createOptionsTable(demo.getConnection());
+            OptionsTable.populateOptionsTableFromCSV(
+                    demo.getConnection(),
+                    "options.csv");
+            VehicleTable.createVehicleTable(demo.getConnection());
+            VehicleTable.populateVehicleTableFromCSV(
+                    demo.getConnection(),
+                    "vehicle.csv");
+
             /**
              * Iterates the Result set
              *
