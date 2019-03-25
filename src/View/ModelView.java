@@ -7,6 +7,7 @@ public class ModelView implements View{
     public void run() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Command:\n-[L]ist All:\n-[S]ort:\n\tbrand\n\tclass\n\tproduced\n-[P]roduce Car");
+        String input = in.next();
         char prefix = input.charAt(0);
         prefix = Character.toUpperCase(prefix);
         switch (prefix){
