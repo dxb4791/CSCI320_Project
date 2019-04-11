@@ -27,13 +27,25 @@ public class DealersManufactureView implements View{
         prefix = Character.toUpperCase(prefix);
         switch (prefix){
             case 'L':
-                System.out.println("This will list all dealers");
+                System.out.println("This will list all dealers, sorted by SALES");
+                /*Eugene
+                We do not have a SALES attribute defined yet.  If it's inventory, I'm confused becase inventory
+                is a string.
+                */
 
-                //Connection conn = demo.getConnection();
-                //DealerTable.queryDealerTable(conn, new ArrayList<String>(), new ArrayList<String>());
+                /*Connection conn = demo.getConnection();
 
-                DealerTable.printDealerTable(demo.getConnection());
-                break;
+                try {
+                    Statement st = conn.createStatement();
+                    String eventQuery = "SELECT * from dealer order by INVENTORY";
+                    ResultSet result = st.executeQuery(eventQuery);
+
+                    while (result.next()) {
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;*/
             case 'F':
                 System.out.println("This will find dealers for cars by VIN or CLASS");
                 break;
