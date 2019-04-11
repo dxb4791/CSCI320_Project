@@ -29,6 +29,7 @@ public class DealerSellView implements View {
                 break;
             case 'L':
                 System.out.println("This will list all customers");
+
                 CustomerTable.printCustomerTable(demo.getConnection());
                 break;
             case 'Q':

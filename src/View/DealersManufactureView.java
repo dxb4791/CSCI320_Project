@@ -30,7 +30,7 @@ public class DealersManufactureView implements View{
                 System.out.println("This will list all dealers, sorted by SALES");
                 /*Eugene
                 We do not have a SALES attribute defined yet.  If it's inventory, I'm confused becase inventory
-                is a string.
+                is a string.  I think we were gonna make a function numOfSales()
                 */
 
                 /*Connection conn = demo.getConnection();
@@ -44,9 +44,11 @@ public class DealersManufactureView implements View{
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
-                }
-                break;*/
+                }*/
+                break;
             case 'F':
+
+                /*Still wasn't sure how to implement this because it might involve making another view having 2 cases*/
                 System.out.println("This will find dealers for cars by VIN or CLASS");
                 break;
             default:
