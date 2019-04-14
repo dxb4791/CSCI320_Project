@@ -219,8 +219,8 @@ public class MakeTable {
             e.printStackTrace();
         }
     }
-    public static void removeMake(Connection conn, String d_id){
-        String query = "DELETE FROM dealer WHERE d_id = "+d_id;
+    public static void removeMake(Connection conn, String makename){
+        String query = "DELETE FROM make WHERE makename = "+makename+");";
         try{
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
