@@ -235,7 +235,7 @@ public class CustomerTable {
 
     public static void printCustomersByIncome(Connection conn) {
         try {
-            Scanner input = new Scanner(System.in);  // Create a Scanner object
+            Scanner input = new Scanner(System.in);
             System.out.println("Enter a dealer id to find it's associated customers:\n");
             String in = input.next();
             String query = "select * from customer\n where d_id = " + in + "\norder by income desc;\n";
