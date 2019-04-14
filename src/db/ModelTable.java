@@ -72,6 +72,16 @@ public class ModelTable {
         }
     }
 
+    public static void removeModel(Connection conn, String name, String makeName){
+        String query = String.format("DELETE FROM model where Name = " + name + " and make_name = " + makeName);
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     /**
      * This creates an sql statement to do a bulk add of model
      *
