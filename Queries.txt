@@ -17,8 +17,8 @@ select * from dealer;
 select name, address from customer group by address;
 
 //Find a vehicle////done
-select name, class, seats, doors, makename
-from model group by makename;
+//select name, class, seats, doors, makename
+//from model group by makename;
 
 
 //Create new model
@@ -84,14 +84,10 @@ having dealer.d_id = '23618';
 
 //sort by sales
 
-//i implemented it, but it does not sort the table differently from a normalprint.
-select * from dealer;
-select dealer.name, dealer.location, sum(vehicle.price)
-from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
-group by dealer.name
-order by sum(vehicle.price) desc;
-
-//
+//select dealer.name, dealer.location, sum(vehicle.price)
+//from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
+//group by dealer.name
+//order by sum(vehicle.price) desc;//
 
 
 
