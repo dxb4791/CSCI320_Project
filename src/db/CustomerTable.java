@@ -257,7 +257,14 @@ public class CustomerTable {
             e.printStackTrace();
         }
     }
-
-
+    public static void updateAfterBuy(Connection conn,String vin,int c_id){
+        String query = "SET vehicle.D_ID = null WHERE vehicle.vin ="+vin+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+        }catch(SQLException e ){
+                e.printStackTrace();
+        }
+    }
 }
 
