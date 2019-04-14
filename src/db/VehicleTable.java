@@ -377,4 +377,24 @@ public class VehicleTable {
             e.printStackTrace();
         }
     }
+    public static void addCar(Connection conn,String vin,int mileage,int D_ID,String options,int price,String ModelName){
+        String query = "INSERT INTO vehicle values("+vin+","+mileage+","+D_ID+","+options+","+price+","+ModelName+")"+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void changePrice(Connection conn, String vin,int newPrice){
+        String query = "SET vehicle.price = "+newPrice+" WHERE vehicle.vin ="+vin+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 }
