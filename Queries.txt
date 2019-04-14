@@ -1,0 +1,130 @@
+(select vehicle.vin, price, modelname from Customer, Vehicle where customer.vin = vehicle.vin)
+
+
+
+//Find unowned vehicles
+(select vehicle.vin, price, modelname from Vehicle)
+except
+(select vehicle.vin, price, modelname from Customer, Vehicle where customer.vin = vehicle.vin);
+
+update customer
+set customer.vin = '1D7RW3BK0BS153447'
+where customer.c_id = '8940323';
+
+select name, modelname from customer, vehicle where customer.vin = vehicle.vin;
+
+select * from dealer;
+select name, address from customer group by address;
+
+//Find a vehicle
+select name, class, seats, doors, makename
+from model group by makename;
+
+
+//Create new model
+insert into model values('CRV', '2004', 'compact SUV', '5', '4', 'Honda');
+
+
+select makename, name, class, seats, doors, year
+from model group by makename, name, year;
+
+
+//sorting list for dealers
+select * from customer
+where d_id = '00000'
+order by income desc;
+
+//display most popular models
+select modelname, count(modelname) from vehicle
+group by modelname
+order by count(modelname) desc;
+
+//display average price of each model
+select modelname, avg(price) from vehicle group by modelname order by count(modelname) desc;
+
+//display average price of each make
+select makename, avg(price)
+from vehicle, model
+where vehicle.modelname = model.name
+group by makename
+order by count(model.makename) desc;
+
+
+//WIP QUERY DOES NOT WORK
+// purchase car/ assign car to customer
+update customer
+set customer.vin = vehicle.vin,
+customer.d_id = vehicle.d_id
+from (
+select vehicle.vin, vehicle.d_id
+from vehicle full outer join customer
+where vehicle.vin = 'WAU2GBFCXDN840701'
+and customer.c_id = '184985');
+
+//working alternative  where vin= '4f' 4f is vin of new car
+update customer
+set vin = '4F3GJ47D55S879673'
+where c_id = '950350';
+
+//
+
+//find unpurchased cars
+select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
+
+//find car models who cost less than income on average
+select modelname, avg(price) from cars
+group by modelname
+having avg(price) <= 50000;
+
+//find sales of a single dealer
+select dealer.name, dealer.location, sum(vehicle.price)
+from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
+group by dealer.name
+having dealer.d_id = '23618';
+
+//sort by sales
+select * from dealer;
+select dealer.name, dealer.location, sum(vehicle.price)
+from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
+group by dealer.name
+order by sum(vehicle.price) desc;
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(select vehicle.vin, price, modelname from Vehicle)
+except
+(select vehicle.vin, price, modelname from Customer, Vehicle where customer.vin = vehicle.vin);
+
+select * from dealer;
+select name, address from customer group by address;
+
+select distinct primarymake from dealer;
+
+select name, phone, address from customer where vin is null;
+
+select * from customer;
+
+update customer
+set customer.vin = '1D7RW3BK0BS153447'
+ where customer.c_id = '8940323';
+
+select name, modelname from customer, vehicle where customer.vin = vehicle.vin;

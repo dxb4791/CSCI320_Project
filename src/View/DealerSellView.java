@@ -5,7 +5,7 @@ import db.H2DatabaseMain;
 
 import java.util.Scanner;
 
-public class DealerSellView implements View {
+public class  DealerSellView implements View {
     @Override
     public void run() {
         H2DatabaseMain demo = new H2DatabaseMain();

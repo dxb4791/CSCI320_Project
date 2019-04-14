@@ -18,7 +18,9 @@ public class DealerBuyView implements View{
         //Create the database connections, basically makes the database
         demo.createConnection(location, user, password);
         Scanner in = new Scanner(System.in);
-        System.out.println("Buy Page\n-[L]ist all:\n\tmodels,brands,price" +
+        System.out.println("Buy Page\n" +
+                "-[L]ist all:\n" +
+                "\tmodels,brands,price" +
                 "\n-[B]uy vin\n");
         String input = in.next();
         char prefix = input.charAt(0);

@@ -1,4 +1,6 @@
 package View;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import db.H2DatabaseMain;
 import db.Vehicle;
@@ -19,39 +21,42 @@ public class CustomerBuyView implements View  {
         System.out.println("- [B]uy a vehicle");
         System.out.println("- [F]ind a seller");
 
-        String input = in.next();
+        while(in.hasNext()) {
+            String input = in.nextLine();
 
-        if(input.length() == 0){
-            input = "q";
+            if (input.length() == 0) {
+                input = "q";
+            }
+            char prefix = input.charAt(0);
+            prefix = Character.toUpperCase(prefix);
+            switch (prefix) {
+                case 'L':
+
+                    System.out.println("This will list all vehicles");
+                    H2DatabaseMain demo = new H2DatabaseMain();
+
+                    //Hard drive location of the database
+                    String location = "./database/database";
+                    String user = "ceo";
+                    String password = "test";
+
+                    //Create the database connections, basically makes the database
+                    demo.createConnection(location, user, password);
+                    ArrayList<String> cols = new ArrayList<>(Arrays.asList(""));
+                    //VehicleTable.queryVehicleTable(demo.getConnection(),)
+                    break;
+                case 'B':
+                    System.out.println("This will buy a vehicle");
+                    System.out.println("Please enter a VIN:");
+                    break;
+                case 'F':
+                    System.out.println("This will find a seller");
+                    break;
+                default:
+                    return;
+            }
+
         }
-        char prefix = input.charAt(0);
-        prefix = Character.toUpperCase(prefix);
-        switch (prefix){
-            case 'L':
-
-                System.out.println("This will list all vehicles");
-                H2DatabaseMain demo = new H2DatabaseMain();
-
-                //Hard drive location of the database
-                String location = "./database/database";
-                String user = "ceo";
-                String password = "test";
-
-                //Create the database connections, basically makes the database
-                demo.createConnection(location, user, password);
-                VehicleTable.printVehicleTable(demo.getConnection());
-                break;
-            case 'B':
-                System.out.println("This will buy a vehicle");
-                break;
-            case 'F':
-                System.out.println("This will find a seller");
-                break;
-            default:
-                return;
-        }
-
-
     }
 
 

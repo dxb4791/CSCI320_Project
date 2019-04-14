@@ -10,7 +10,7 @@ public class Customer {
     private final String address;
     private final String phone;
     private final String gender;
-    private final String income;
+    private final int income;
     private final String vin;
     private final String D_ID;
     public Customer(String C_ID,
@@ -18,7 +18,7 @@ public class Customer {
                          String address,
                          String phone,
                          String gender,
-                         String income,
+                         int income,
                          String vin,
                          String D_ID){
         this.C_ID=C_ID;
@@ -42,7 +42,7 @@ public class Customer {
         this.address=data[2];
         this.phone = data[3];
         this.gender=data[4];
-        this.income=data[5];
+        this.income=Integer.parseInt(data[5]);
         this.vin=data[6];
         this.D_ID = data[7];
     }
@@ -99,7 +99,7 @@ public class Customer {
      * getter for income
      * @return
      */
-    public String getIncome() {
+    public int getIncome() {
         return income;
     }
 
