@@ -251,4 +251,21 @@ public class DealerTable {
         }
     }
 
+    public static void printDealerCustomersbyIncome(Connection conn) {
+        String stringquery = "select customer.income, customer.name, customer.D_ID from customer and dealer where customer.D_ID = dealer.D_ID " +
+                "order by customer.income";
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery(stringquery);
+
+            while(result.next()){
+                System.out.printf("Income: %d Name: %s D_ID: %s\n",
+                        Integer.parseInt(result.getString(1)),
+                        result.getString(2),
+                        result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
