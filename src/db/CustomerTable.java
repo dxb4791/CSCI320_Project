@@ -293,5 +293,19 @@ public class CustomerTable {
             e.printStackTrace();
         }
     }
+    public static void listByAddress(Connection conn){
+        String query = "select name, address from customer group by address;";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("Name %s: Address %s\n",
+                        result.getString(1),
+                        result.getString(2));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 }
 
