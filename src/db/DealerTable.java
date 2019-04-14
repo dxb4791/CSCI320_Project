@@ -281,7 +281,7 @@ public class DealerTable {
         }
     }
     public static void removeDealer(Connection conn, String d_id){
-        String query = "DELETE FROM dealer WHERE d_id = "+d_id;
+        String query = "DELETE FROM dealer WHERE d_id = "+d_id+";";
         try{
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
