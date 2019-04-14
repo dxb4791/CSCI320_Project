@@ -237,4 +237,18 @@ public class DealerTable {
             e.printStackTrace();
         }
     }
+    public static void printSingleDealerSales(Connection conn,String d_id){
+        String query = "select dealer.name, dealer.location, sum(vehicle.price)" +
+                "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id" +
+                "group by dealer.name" +
+                "having dealer.d_id ="+d_id+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+
 }
