@@ -223,17 +223,18 @@ public class VehicleTable {
     }
 
     public static void printUnpurchasedCars(Connection conn){
-        String query ="SELECT * FROM vehicle LEFT OUTER JOIN customer on vehicle.vin = customer.vin WHERE name is null;";
+        String query ="(select vehicle.vin, price, modelname from Vehicle)\n" +
+                "except\n" +
+                "(select vehicle.vin, price, modelname from Customer, Vehicle where customer.vin = vehicle.vin);\n";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("VIN: %s: Mileage %s : Price USD %s : Model %s\n",
+                System.out.printf("VIN: %s: Price USD: %d ModelName: %s\n",
                         result.getString(1),
-                        result.getString(2),
-                        result.getString(5),
-                        result.getString(6));
+                        Integer.parseInt((result.getString(2))),
+                        result.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
