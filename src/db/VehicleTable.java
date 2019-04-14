@@ -241,6 +241,24 @@ public class VehicleTable {
         }
 
     }
+
+    public static void printPurchasedCars(Connection conn) {
+        String query = "select name, modelname, vin from customer, vehicle where customer.vin = vehicle.vin;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("Cust_Name: %s: ModelName: %s VIN: %s\n",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))),
+                        result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static ResultSet findVehicle(Connection conn,String makename){
         String query = "SELECT name, class, seats, doors, makename FROM model GROUP BY "+makename+";";
         try {
