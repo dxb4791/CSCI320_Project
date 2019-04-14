@@ -228,7 +228,7 @@ public class DealerTable {
             ResultSet result = statement.executeQuery(stringquery);
 
             while(result.next()){
-                System.out.printf("db.Dealer %s: %s : \n",
+                System.out.printf("db.Dealer %s: %s : %s \n",
                         result.getString(1),
                         result.getString(2),
                         result.getString(3));
@@ -245,10 +245,28 @@ public class DealerTable {
         try{
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("db.Dealer %s: %s : %s \n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void findDealer(Connection conn,int d_id){
+        String query = "select name, location, primarymake from dealer where d_id = "+d_id+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            System.out.printf("db.Dealer %s: %s : %s \n",
+                    result.getString(1),
+                    result.getString(2),
+                    result.getString(3));
 
         }catch(SQLException e ){
             e.printStackTrace();
         }
     }
-
 }
