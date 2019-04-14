@@ -1,9 +1,13 @@
 package View;
 
+import db.Dealer;
 import db.DealerTable;
 import db.H2DatabaseMain;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,10 +33,8 @@ public class DealersManufactureView implements View{
             case 'L':
                 System.out.println("This will list all dealers");
 
-                //Connection conn = demo.getConnection();
-                //DealerTable.queryDealerTable(conn, new ArrayList<String>(), new ArrayList<String>());
-
-                DealerTable.printDealerTable(demo.getConnection());
+                Connection conn = demo.getConnection();
+                DealerTable.printDealersBySales(conn);
                 break;
             case 'F':
                 System.out.println("This will find dealers for cars by VIN or CLASS");

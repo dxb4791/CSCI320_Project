@@ -217,4 +217,27 @@ public class DealerTable {
         }
 
     }
+    public static void printDealersBySales(Connection conn) {
+        String stringquery = "select * from dealer;\n" +
+                "select dealer.name, dealer.location, sum(vehicle.price)\n" +
+                "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id\n" +
+                "group by dealer.name\n" +
+                "order by sum(vehicle.price) desc;";
+        try {
+            Statement statement = conn.createStatement();
+
+            ResultSet result = statement.executeQuery(stringquery);
+
+            while(result.next()){
+                System.out.printf("db.Dealer %s: %s : %s : %s : %s \n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

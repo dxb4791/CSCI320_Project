@@ -69,7 +69,7 @@ where c_id = '950350';
 //
 
 //find unpurchased cars
-select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
+//select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
 
 //find car models who cost less than income on average
 select modelname, avg(price) from cars
@@ -83,6 +83,8 @@ group by dealer.name
 having dealer.d_id = '23618';
 
 //sort by sales
+
+//i implemented it, but it does not sort the table differently from a normalprint.
 select * from dealer;
 select dealer.name, dealer.location, sum(vehicle.price)
 from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
