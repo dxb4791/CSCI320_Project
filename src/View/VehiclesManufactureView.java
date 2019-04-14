@@ -17,6 +17,7 @@ public class VehiclesManufactureView implements View{
                 break;
             case 'M':
                 VehiclesManufactureView vmv = new VehiclesManufactureView();
+
                 vmv.run();
                 break;
             case 'Q':

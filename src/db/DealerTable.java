@@ -218,8 +218,7 @@ public class DealerTable {
 
     }
     public static void printDealersBySales(Connection conn) {
-        String stringquery = "select * from dealer;\n" +
-                "select dealer.name, dealer.location, sum(vehicle.price)\n" +
+        String stringquery = "select dealer.name, dealer.location, sum(vehicle.price)\n" +
                 "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id\n" +
                 "group by dealer.name\n" +
                 "order by sum(vehicle.price) desc;";
@@ -229,15 +228,27 @@ public class DealerTable {
             ResultSet result = statement.executeQuery(stringquery);
 
             while(result.next()){
-                System.out.printf("db.Dealer %s: %s : %s : %s : %s \n",
+                System.out.printf("db.Dealer %s: %s : \n",
                         result.getString(1),
                         result.getString(2),
-                        result.getString(3),
-                        result.getString(4),
-                        result.getString(5));
+                        result.getString(3));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+    public static void printSingleDealerSales(Connection conn,String d_id){
+        String query = "select dealer.name, dealer.location, sum(vehicle.price)" +
+                "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id" +
+                "group by dealer.name" +
+                "having dealer.d_id ="+d_id+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+
 }
