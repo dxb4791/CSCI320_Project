@@ -208,5 +208,26 @@ public class MakeTable {
         }
         return null;
     }
+    public static void addMake(Connection conn,Make make){
+        String stringquery = "INSERT INTO make values("+make.makename+","+make.model+","+make.D_ID+")";
+        try {
+            Statement statement = conn.createStatement();
+
+            ResultSet result = statement.executeQuery(stringquery);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void removeMake(Connection conn, String d_id){
+        String query = "DELETE FROM dealer WHERE d_id = "+d_id;
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 
 }
