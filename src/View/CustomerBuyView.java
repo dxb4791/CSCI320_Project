@@ -43,7 +43,7 @@ public class CustomerBuyView implements View  {
                     //Create the database connections, basically makes the database
                     demo.createConnection(location, user, password);
                     ArrayList<String> cols = new ArrayList<>(Arrays.asList(""));
-                    //VehicleTable.queryVehicleTable(demo.getConnection(),)
+                    VehicleTable.printUnpurchasedCars(demo.getConnection());
                     break;
                 case 'B':
                     System.out.println("This will buy a vehicle");
