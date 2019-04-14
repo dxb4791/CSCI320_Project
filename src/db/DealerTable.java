@@ -269,4 +269,25 @@ public class DealerTable {
             e.printStackTrace();
         }
     }
+    public static void addDealer(Connection conn, Dealer dealer){
+        String query = "INSERT INTO dealer values("+dealer.getD_ID()+","+dealer.getName()
+                +","+dealer.getLocation()+","+dealer.getInventory()+","+dealer.getPrimaryMake()+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void removeDealer(Connection conn, String d_id){
+        String query = "DELETE FROM dealer WHERE d_id = "+d_id;
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 }
