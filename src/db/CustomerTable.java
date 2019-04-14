@@ -283,5 +283,15 @@ public class CustomerTable {
             e.printStackTrace();
         }
     }
+    public static void updateAfterBuy(Connection conn, String vin,int c_id){
+        String query = "SET customer.vin= "+vin+ "WHERE customer.c_id="+c_id +";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 }
 
