@@ -220,4 +220,14 @@ public class VehicleTable {
         }
 
     }
+    public static void updateAfterBuy(Connection conn, String vin){
+        String query = "SET vehicle.D_ID = null WHERE vehicle.vin ="+vin+";";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
