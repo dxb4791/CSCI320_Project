@@ -246,5 +246,21 @@ public class ModelTable {
         }
     }
 
+    public static void listClassesAndCount(Connection conn) {
+        String query = "select c_class, count(c_class) from model group by c_class";
+
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("Class: %s NumOfCars: %d \n",
+                        result.getString(1),
+                        Integer.parseInt(result.getString(2)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
