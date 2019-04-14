@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * vehicle table implementation
@@ -214,6 +215,26 @@ public class VehicleTable {
                         result.getString(3),
                         result.getString(4),
                         result.getString(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void printUnpurchasedCars(Connection conn){
+
+        String query ="SELECT * FROM vehicle LEFT OUTER JOIN customer on vehicle.vin = customer.vin WHERE name is null;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("VIN: %s: Mileage %s : Price USD %s : Model %s\n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(5),
+                        result.getString(6));
             }
         } catch (SQLException e) {
             e.printStackTrace();
