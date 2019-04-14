@@ -47,12 +47,12 @@ public class CustomerVehicleView implements View  {
                         Statement statement = conn.createStatement();
                         System.out.println("Enter your name: (This is a wip, only prints for bob johnson)");
                         String name = in.nextLine();
-                        String stringquery = "SELECT * FROM CUSTOMER WHERE name = \'" + name + "\';";
+                        String stringquery = "SELECT VIN, NAME FROM CUSTOMER WHERE name = \'" + name + "\';";
                         //String stringquery = "select * from customer where name = 'Bob Johnson';";
                         ResultSet result = statement.executeQuery(stringquery);
 
                         while (result.next()) {
-                            System.out.printf("db.Customer VIN %s: %s \n",
+                            System.out.printf("VIN %s: %s \n",
                                     result.getString(1),
                                     result.getString(2));
                         }
