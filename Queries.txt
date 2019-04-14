@@ -16,7 +16,7 @@ select name, modelname from customer, vehicle where customer.vin = vehicle.vin;
 select * from dealer;
 select name, address from customer group by address;
 
-//Find a vehicle
+//Find a vehicle////done
 select name, class, seats, doors, makename
 from model group by makename;
 
@@ -67,7 +67,7 @@ set vin = '4F3GJ47D55S879673'
 where c_id = '950350';
 
 //
-
+//Done
 //find unpurchased cars
 select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
 
