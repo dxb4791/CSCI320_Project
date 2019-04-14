@@ -344,4 +344,20 @@ public class VehicleTable {
             System.out.println(s);
         }
     }
+    public static void findCarsUnderValue(Connection conn, int input){
+        String query = "select modelname, avg(price) from cars" +
+                "group by modelname" +
+                "having avg(price) <= "+input+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("ModelName: %s avg price: %d",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 }
