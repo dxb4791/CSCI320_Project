@@ -223,7 +223,6 @@ public class VehicleTable {
     }
 
     public static void printUnpurchasedCars(Connection conn){
-
         String query ="SELECT * FROM vehicle LEFT OUTER JOIN customer on vehicle.vin = customer.vin WHERE name is null;";
         try {
             Statement stmt = conn.createStatement();
@@ -241,5 +240,16 @@ public class VehicleTable {
         }
 
     }
+    public static ResultSet findVehicle(Connection conn,String makename){
+        String query = "SELECT name, class, seats, doors, makename FROM model GROUP BY "+makename+";";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
 
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -197,5 +197,16 @@ public class MakeTable {
         }
 
     }
+    public static ResultSet avgPrice(Connection conn){
+        String query = "SELECT makename, avg(price) FROM vehicle, model WHERE vehicle.modelname = model.name GROUP BY makename ORDER BY count(model.makename) desc;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
