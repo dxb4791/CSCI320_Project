@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.Random;
 
 /**
  * vehicle table implementation
@@ -279,6 +281,67 @@ public class VehicleTable {
 
         }catch(SQLException e ){
             e.printStackTrace();
+        }
+    }
+
+
+    public static void vehicleGenerator(){
+        Scanner in = new Scanner(System.in);
+        int minPrice = 10000;
+        ArrayList<String> lst = new ArrayList<>();
+        int iter = 100;
+        while( iter>0){
+            String table = "vehicle";
+            System.out.println("Enter id:");
+            String cid = in.nextLine();
+            iter--;
+            //vin,mileage,D_ID,options,price,ModelName
+            String vin ="";
+            Random generator = new Random();
+            int mileage = generator.nextInt(60000);
+            int D_ID = generator.nextInt(5);
+            String options = "P_"+generator.nextInt(12);
+
+            int price = minPrice+generator.nextInt(100000);
+            int temp = generator.nextInt(8);
+            String ModelName;
+            switch(temp) {
+                case 1:
+                    ModelName = "Veyron";
+                    break;
+                case 2:
+                    ModelName = "Civic";
+                    break;
+                case 3:
+                    ModelName = "NSX";
+                    break;
+                case 4:
+                    ModelName = "S6";
+                    break;
+                case 5:
+                    ModelName = "Escape";
+                    break;
+                case 6:
+                    ModelName ="Tacoma";
+                    break;
+                case 7:
+                    ModelName = "V8 Vantage";
+                    break;
+                case 8:
+                    ModelName = "iQ";
+                    break;
+                default:
+                    ModelName = "Civic";
+            }
+
+
+
+
+            String q = String.format("insert into %s values('%s','%d','%d','%s','%d','%s'",table, vin,mileage,D_ID,options,price,ModelName);
+            lst.add(q);
+        }
+        for (String s:lst) {
+            System.out.println(s);
         }
     }
 }
