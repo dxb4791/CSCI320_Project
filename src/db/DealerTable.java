@@ -228,7 +228,7 @@ public class DealerTable {
             ResultSet result = statement.executeQuery(stringquery);
 
             while(result.next()){
-                System.out.printf("db.Dealer %s: %s : \n",
+                System.out.printf("db.Dealer %s: %s : %s \n",
                         result.getString(1),
                         result.getString(2),
                         result.getString(3));
@@ -245,26 +245,48 @@ public class DealerTable {
         try{
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("db.Dealer %s: %s : %s \n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void findDealer(Connection conn,int d_id){
+        String query = "select name, location, primarymake from dealer where d_id = "+d_id+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            System.out.printf("db.Dealer %s: %s : %s \n",
+                    result.getString(1),
+                    result.getString(2),
+                    result.getString(3));
 
         }catch(SQLException e ){
             e.printStackTrace();
         }
     }
+    public static void addDealer(Connection conn, Dealer dealer){
+        String query = "INSERT INTO dealer values("+dealer.getD_ID()+","+dealer.getName()
+                +","+dealer.getLocation()+","+dealer.getInventory()+","+dealer.getPrimaryMake()+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
 
-    public static void printDealerCustomersbyIncome(Connection conn) {
-        String stringquery = "select customer.income, customer.name, customer.D_ID from customer and dealer where customer.D_ID = dealer.D_ID " +
-                "order by customer.income";
-        try {
-            Statement statement = conn.createStatement();
-            ResultSet result = statement.executeQuery(stringquery);
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void removeDealer(Connection conn, String d_id){
+        String query = "DELETE FROM dealer WHERE d_id = "+d_id;
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
 
-            while(result.next()){
-                System.out.printf("Income: %d Name: %s D_ID: %s\n",
-                        Integer.parseInt(result.getString(1)),
-                        result.getString(2),
-                        result.getString(3));
-            }
-        } catch (SQLException e) {
+        }catch(SQLException e ){
             e.printStackTrace();
         }
     }
