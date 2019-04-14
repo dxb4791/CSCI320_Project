@@ -2751,3 +2751,17 @@ select dealer.name, dealer.location, sum(vehicle.price)
 from dealer inner join vehicle on dealer.D_ID = vehicle.d_id 
 group by dealer.name, sum(vehicle.price)
 having dealer.d_id = '236188' [42000-199]
+2019-04-14 14:41:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "4" for parameter "columnIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3231)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3270)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:296)
+	at db.DealerTable.printDealersBySales(DealerTable.java:235)
+	at View.DealersManufactureView.run(DealersManufactureView.java:37)
+	at View.ManufactureView.run(ManufactureView.java:20)
+	at View.WelcomeView.run(WelcomeView.java:31)
+	at View.WelcomeView.main(WelcomeView.java:54)
