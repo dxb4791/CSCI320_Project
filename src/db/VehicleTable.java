@@ -253,8 +253,25 @@ public class VehicleTable {
             while(result.next()){
                 System.out.printf("Cust_Name: %s: ModelName: %s VIN: %s\n",
                         result.getString(1),
-                        Integer.parseInt((result.getString(2))),
+                        result.getString(2),
                         result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printMostPopularModels(Connection conn) {
+        String query = "select modelname, count(modelname) from vehicle group by modelname"
+                + " order by count(modelname) desc;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("ModelName: %s NumOfModels: %d\n",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
