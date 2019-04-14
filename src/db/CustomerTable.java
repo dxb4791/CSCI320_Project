@@ -257,13 +257,30 @@ public class CustomerTable {
             e.printStackTrace();
         }
     }
-    public static void updateAfterBuy(Connection conn,String vin,int c_id){
-        String query = "SET vehicle.D_ID = null WHERE vehicle.vin ="+vin+";";
-        try{
+
+    public static void customerSellsVehicle(Connection conn) {
+        try {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter your customer ID to sell your car: \n");
+            String in = input.next();
+            String query = "update customer set vin = null where c_id = " + in + ";\n";
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
-        }catch(SQLException e ){
-                e.printStackTrace();
+
+            //for possible testing
+            /*while(result.next()){
+                System.out.printf("db.Customer %s: %s: %s: %s: %s: %s: %s: %s \n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6),
+                        result.getString(7),
+                        result.getString(8));
+            }*/
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
