@@ -18,11 +18,13 @@ public class CustomerVehicleView implements View  {
     @Override
     public void run() {
         Scanner in = new Scanner(System.in);
-        System.out.println("db.Customer db.Vehicle Page");
-        System.out.println("What would you like to do?");
-        System.out.println("- [L]ist all owned vehicles");
+        boolean running = true;
+        while (running){
+            System.out.println("db.Customer db.Vehicle Page");
+            System.out.println("What would you like to do?");
+            System.out.println("- [L]ist all owned vehicles");
 
-        while(in.hasNext()) {
+
             String input = in.nextLine();
 
             if (input.length() == 0) {

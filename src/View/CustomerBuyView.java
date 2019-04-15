@@ -15,13 +15,13 @@ public class CustomerBuyView implements View  {
     @Override
     public void run() {
         Scanner in = new Scanner(System.in);
-        System.out.println("db.Customer Buy Page");
-        System.out.println("What would you like to do?");
-        System.out.println("- [L]ist all vehicles");
-        System.out.println("- [B]uy a vehicle");
-        System.out.println("- [F]ind a seller");
-
-        while(in.hasNext()) {
+        boolean running = true;
+        while (running){
+            System.out.println("db.Customer Buy Page");
+            System.out.println("What would you like to do?");
+            System.out.println("- [L]ist all vehicles");
+            System.out.println("- [B]uy a vehicle");
+            System.out.println("- [F]ind a seller");
             String input = in.nextLine();
 
             if (input.length() == 0) {
@@ -52,8 +52,12 @@ public class CustomerBuyView implements View  {
                 case 'F':
                     System.out.println("This will find a seller");
                     break;
+                case 'Q':
+                    running = false;
+                    continue;
                 default:
-                    return;
+                    System.out.println("Invalid Command");
+                    break;
             }
 
         }

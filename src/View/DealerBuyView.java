@@ -1,6 +1,7 @@
 package View;
 
 import db.H2DatabaseMain;
+import db.VehicleTable;
 
 import java.util.Scanner;
 
@@ -36,7 +37,8 @@ public class DealerBuyView implements View{
                     System.out.println("This will buy vin");
                     break;
                 case 'Q':
-
+                    running = false;
+                    continue;
                 default:
                     System.out.println("Invalid Command entered");
                     break;

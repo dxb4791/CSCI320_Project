@@ -1,5 +1,7 @@
 package View;
 
+import db.Model;
+
 import java.util.Scanner;
 
 public class VehiclesManufactureView implements View{
@@ -18,7 +20,7 @@ public class VehiclesManufactureView implements View{
                     dmv.run();
                     break;
                 case 'M':
-                    VehiclesManufactureView vmv = new VehiclesManufactureView();
+                    ModelView vmv = new ModelView();
                     vmv.run();
                     break;
                 case 'Q':

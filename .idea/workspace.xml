@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="">
+    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="updated ui features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CustomerBuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerBuyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CustomerVehicleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerVehicleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/DealerBuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerBuyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DealerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DealersManufactureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealersManufactureView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ManufactureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ManufactureView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DealerSellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerSellView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ModelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ModelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/WelcomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/WelcomeView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,28 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Queries.txt">
+        <entry file="file://$PROJECT_DIR$/src/View/VehiclesManufactureView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/BrandView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/DealersManufactureView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+            <state relative-caret-position="259">
+              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,19 +35,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/VehiclesManufactureView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
-              <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -73,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
+            <state relative-caret-position="560">
               <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
             </state>
           </provider>
@@ -82,17 +55,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DealerBuyView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="560">
+              <caret line="42" column="66" lean-forward="true" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/DealerSellView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="238">
+              <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -107,10 +83,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/H2DatabaseMain.java">
+        <entry file="file://$PROJECT_DIR$/src/View/CustomerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="189" column="66" lean-forward="true" selection-start-line="189" selection-start-column="66" selection-end-line="189" selection-end-column="66" />
+            <state relative-caret-position="427">
+              <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/CustomerVehicleView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/CustomerBuyView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ModelView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -155,20 +161,21 @@
         <option value="$PROJECT_DIR$/src/Make.java" />
         <option value="$PROJECT_DIR$/src/MakeTable.java" />
         <option value="$PROJECT_DIR$/src/H2DatabaseMain.java" />
-        <option value="$PROJECT_DIR$/src/View/ModelView.java" />
-        <option value="$PROJECT_DIR$/src/View/CustomerVehicleView.java" />
-        <option value="$PROJECT_DIR$/src/View/DealerSellView.java" />
         <option value="$PROJECT_DIR$/src/db/H2DatabaseMain.java" />
-        <option value="$PROJECT_DIR$/src/View/CustomerBuyView.java" />
         <option value="$PROJECT_DIR$/src/db/Customer.java" />
         <option value="$PROJECT_DIR$/customer.csv" />
         <option value="$PROJECT_DIR$/Queries.txt" />
         <option value="$PROJECT_DIR$/src/View/WelcomeView.java" />
         <option value="$PROJECT_DIR$/src/View/ManufactureView.java" />
         <option value="$PROJECT_DIR$/src/View/DealersManufactureView.java" />
-        <option value="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerView.java" />
         <option value="$PROJECT_DIR$/src/View/DealerBuyView.java" />
+        <option value="$PROJECT_DIR$/src/View/DealerSellView.java" />
+        <option value="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" />
+        <option value="$PROJECT_DIR$/src/View/ModelView.java" />
+        <option value="$PROJECT_DIR$/src/View/CustomerView.java" />
+        <option value="$PROJECT_DIR$/src/View/CustomerVehicleView.java" />
+        <option value="$PROJECT_DIR$/src/View/CustomerBuyView.java" />
       </list>
     </option>
   </component>
@@ -182,7 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,6 +223,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555281541530</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated ui features">
+      <created>1555285087379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555285087379</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -452,7 +466,7 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15075107" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.152897" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Nl-Palette" order="3" />
@@ -466,10 +480,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.53940886" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.53940886" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3297619" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -486,12 +500,39 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed modelView" />
     <MESSAGE value="changed for merge" />
     <MESSAGE value="Added a sample query for list customers vehicles which prints the vehicles of one customer" />
     <MESSAGE value="updated database with new views" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated database with new views" />
+    <MESSAGE value="updated ui features" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated ui features" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -503,7 +544,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/View/CustomerVehicleView.java</url>
-          <line>53</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -616,13 +657,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Options.java" />
-    <entry file="file://$PROJECT_DIR$/src/View/ModelView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
@@ -637,27 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CustomerBuyView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db/CustomerTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CustomerVehicleView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1029">
           <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CustomerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -699,7 +709,7 @@
     <entry file="file://$PROJECT_DIR$/Queries.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -710,27 +720,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/H2DatabaseMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="189" column="66" lean-forward="true" selection-start-line="189" selection-start-column="66" selection-end-line="189" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/VehiclesManufactureView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/DealersManufactureView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
+        <state relative-caret-position="819">
           <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/H2DatabaseMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3906">
+          <caret line="189" column="66" selection-start-line="189" selection-start-column="66" selection-end-line="189" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/VehicleTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DealerBuyView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="42" column="66" lean-forward="true" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/DealerSellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -741,38 +782,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/WelcomeView.java">
+    <entry file="file://$PROJECT_DIR$/src/View/VehiclesManufactureView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+        <state relative-caret-position="259">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DealerView.java">
+    <entry file="file://$PROJECT_DIR$/src/View/ModelView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CustomerView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/VehicleTable.java">
+    <entry file="file://$PROJECT_DIR$/src/View/CustomerVehicleView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3276">
-          <caret line="156" column="4" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+        <state relative-caret-position="21">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DealerBuyView.java">
+    <entry file="file://$PROJECT_DIR$/src/View/CustomerBuyView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/DealerSellView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="1134">
+          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
         </state>
       </provider>
     </entry>
