@@ -246,6 +246,7 @@ public class ModelTable {
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
+
                 System.out.printf("MakeName: %s ModelName: %s Class: %s: \n",
                         result.getString(1),
                         result.getString(2),
