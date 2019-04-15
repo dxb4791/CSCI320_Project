@@ -291,9 +291,9 @@ public class DealerTable {
         }
     }
     public static void listByInventory(Connection conn){
-        String stringquery = "select dealer.name, dealer.location, inventory" +
-                "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id" +
-                "group by dealer.name" +
+        String stringquery = "select dealer.name, dealer.location, dealer.inventory " +
+                "from dealer inner join vehicle on dealer.D_ID = vehicle.d_id " +
+                "group by dealer.name " +
                 "order by inventory desc;";
         try {
             Statement statement = conn.createStatement();
