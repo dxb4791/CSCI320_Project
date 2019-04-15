@@ -274,7 +274,7 @@ public class DealerTable {
                 +","+dealer.getLocation()+","+dealer.getInventory()+","+dealer.getPrimaryMake()+";";
         try{
             Statement stmt = conn.createStatement();
-            ResultSet result = stmt.executeQuery(query);
+            stmt.execute(query);
 
         }catch(SQLException e ){
             e.printStackTrace();
