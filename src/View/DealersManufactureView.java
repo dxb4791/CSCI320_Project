@@ -23,7 +23,7 @@ public class DealersManufactureView implements View{
         demo.createConnection(location, user, password);
         Scanner in = new Scanner(System.in);
         System.out.println("Commands:\n-[L]ist dealers\n\t" +
-                "\n-[F]ind All Dealers\n\t-[V]Car by VIN\n\t");
+                "\n-[F]ind All Dealers\n\t-[V]Car by VIN\n\t-[A]dd dealer\n\t-[R]emove Dealer");
         String input = in.next();
         char prefix = input.charAt(0);
         prefix = Character.toUpperCase(prefix);
@@ -48,6 +48,22 @@ public class DealersManufactureView implements View{
                 }catch(SQLException e){
                     e.printStackTrace();
                 }
+                break;
+            case'A':
+                System.out.println("This will add a dealer");
+                System.out.println("Please Enter dealer values[D_ID name location inventory primarymake]");
+
+                String p_string = in.nextLine();
+                String[]  parsed = p_string.split(" ");
+                DealerTable.addDealer(demo.getConnection(),new Dealer(parsed[0],parsed[1],parsed[2],parsed[3],parsed[4]));
+
+                break;
+            case 'R':
+                System.out.println("This will remove a dealer by D-ID");
+                System.out.println("Please Enter a D_ID");
+
+                    String d_id = in.nextLine();
+                    DealerTable.removeDealer(demo.getConnection(),d_id);
                 break;
 
             default:
