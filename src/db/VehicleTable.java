@@ -278,8 +278,8 @@ public class VehicleTable {
         }
     }
 
-    public static ResultSet findVehicle(Connection conn,String makename){
-        String query = "SELECT name, class, seats, doors, makename FROM model GROUP BY "+makename+";";
+    public static ResultSet findVehicle(Connection conn,String vin){
+        String query = "SELECT name, class, seats, doors, makename FROM vehicle WHERE vehicle.vin = "+vin+";";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
