@@ -39,7 +39,16 @@ public class DealerBuyView implements View{
                 break;
             case 'M':
                 System.out.println("-[A]dd car\n-[I]ncome\n");
+                temp = in.nextLine();
                 switch(temp.charAt(0)){
+                    case 'A':
+                        System.out.println("This will add a make by values(m_id)");
+                        System.out.println("Please Enter a M_ID");
+
+                        String p_string = in.nextLine();
+                        String[]  parsed = p_string.split(" ");
+                        VehicleTable.addCar(demo.getConnection(),parsed[0],Integer.parseInt(parsed[1]),Integer.parseInt(parsed[2]),parsed[3],Integer.parseInt(parsed[4]),parsed[5]);
+                        break;
                     case 'I':
                         CustomerTable.printCustomersByIncome(demo.getConnection());
                         break;
