@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="updated ui features">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CustomerBuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerBuyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CustomerVehicleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerVehicleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CustomerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DealerBuyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerBuyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DealerSellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DealerSellView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ModelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ModelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/VehiclesManufactureView.java" afterDir="false" />
-    </list>
+    <list default="true" id="ff7fd2f9-25a2-438f-ab69-06600f08af0e" name="Default" comment="more ui fixing" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -457,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555285087379</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="more ui fixing">
+      <created>1555287210046</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555287210046</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -532,7 +530,8 @@
     <MESSAGE value="Added a sample query for list customers vehicles which prints the vehicles of one customer" />
     <MESSAGE value="updated database with new views" />
     <MESSAGE value="updated ui features" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated ui features" />
+    <MESSAGE value="more ui fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="more ui fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
