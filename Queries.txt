@@ -16,9 +16,9 @@ select name, modelname from customer, vehicle where customer.vin = vehicle.vin;
 select * from dealer;
 select name, address from customer group by address;
 
-//Find a vehicle
-select name, class, seats, doors, makename
-from model group by makename;
+//Find a vehicle////done
+//select name, class, seats, doors, makename
+//from model group by makename;
 
 
 //Create new model
@@ -67,9 +67,9 @@ set vin = '4F3GJ47D55S879673'
 where c_id = '950350';
 
 //
-
+//Done
 //find unpurchased cars
-select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
+//select vehicle.vin, customer.name from vehicle left outer join customer on vehicle.vin = customer.vin where name is null;
 
 //find car models who cost less than income on average
 select modelname, avg(price) from cars
@@ -83,13 +83,11 @@ group by dealer.name
 having dealer.d_id = '23618';
 
 //sort by sales
-select * from dealer;
-select dealer.name, dealer.location, sum(vehicle.price)
-from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
-group by dealer.name
-order by sum(vehicle.price) desc;
 
-//
+//select dealer.name, dealer.location, sum(vehicle.price)
+//from dealer inner join vehicle on dealer.D_ID = vehicle.d_id
+//group by dealer.name
+//order by sum(vehicle.price) desc;//
 
 
 

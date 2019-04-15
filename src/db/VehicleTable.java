@@ -8,6 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Random;
 
 /**
  * vehicle table implementation
@@ -219,5 +222,179 @@ public class VehicleTable {
             e.printStackTrace();
         }
 
+    }
+
+    public static void printUnpurchasedCars(Connection conn){
+        String query ="(select vehicle.vin, price, modelname from Vehicle)\n" +
+                "except\n" +
+                "(select vehicle.vin, price, modelname from Customer, Vehicle where customer.vin = vehicle.vin);\n";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("VIN: %s: Price USD: %d ModelName: %s\n",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))),
+                        result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void printPurchasedCars(Connection conn) {
+        String query = "select name, modelname, vin from customer, vehicle where customer.vin = vehicle.vin;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("Cust_Name: %s: ModelName: %s VIN: %s\n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void printMostPopularModels(Connection conn) {
+        String query = "select modelname, count(modelname) from vehicle group by modelname"
+                + " order by count(modelname) desc;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("ModelName: %s NumOfModels: %d\n",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ResultSet findVehicle(Connection conn,String makename){
+        String query = "SELECT name, class, seats, doors, makename FROM model GROUP BY "+makename+";";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static void updateAfterBuy(Connection conn, String vin){
+        String query = "SET vehicle.D_ID = null WHERE vehicle.vin ="+vin+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void vehicleGenerator(){
+        Scanner in = new Scanner(System.in);
+        int minPrice = 10000;
+        ArrayList<String> lst = new ArrayList<>();
+        int iter = 100;
+        while( iter>0){
+            String table = "vehicle";
+            System.out.println("Enter id:");
+            String cid = in.nextLine();
+            iter--;
+            //vin,mileage,D_ID,options,price,ModelName
+            String vin ="";
+            Random generator = new Random();
+            int mileage = generator.nextInt(60000);
+            int D_ID = generator.nextInt(5);
+            String options = "P_"+generator.nextInt(12);
+
+            int price = minPrice+generator.nextInt(100000);
+            int temp = generator.nextInt(8);
+            String ModelName;
+            switch(temp) {
+                case 1:
+                    ModelName = "Veyron";
+                    break;
+                case 2:
+                    ModelName = "Civic";
+                    break;
+                case 3:
+                    ModelName = "NSX";
+                    break;
+                case 4:
+                    ModelName = "S6";
+                    break;
+                case 5:
+                    ModelName = "Escape";
+                    break;
+                case 6:
+                    ModelName ="Tacoma";
+                    break;
+                case 7:
+                    ModelName = "V8 Vantage";
+                    break;
+                case 8:
+                    ModelName = "iQ";
+                    break;
+                default:
+                    ModelName = "Civic";
+            }
+
+
+
+
+            String q = String.format("insert into %s values('%s','%d','%d','%s','%d','%s'",table, vin,mileage,D_ID,options,price,ModelName);
+            lst.add(q);
+        }
+        for (String s:lst) {
+            System.out.println(s);
+        }
+    }
+    public static void findCarsUnderValue(Connection conn, int input){
+        String query = "select modelname, avg(price) from cars" +
+                "group by modelname" +
+                "having avg(price) <= "+input+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("ModelName: %s avg price: %d",
+                        result.getString(1),
+                        Integer.parseInt((result.getString(2))));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void addCar(Connection conn,String vin,int mileage,int D_ID,String options,int price,String ModelName){
+        String query = "INSERT INTO vehicle values("+vin+","+mileage+","+D_ID+","+options+","+price+","+ModelName+")"+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
+    public static void changePrice(Connection conn, String vin,int newPrice){
+        String query = "SET vehicle.price = "+newPrice+" WHERE vehicle.vin ="+vin+";";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
     }
 }

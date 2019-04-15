@@ -72,6 +72,16 @@ public class ModelTable {
         }
     }
 
+    public static void removeModel(Connection conn, String name, String makeName){
+        String query = String.format("DELETE FROM model where Name = " + name + " and make_name = " + makeName);
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     /**
      * This creates an sql statement to do a bulk add of model
      *
@@ -215,4 +225,52 @@ public class ModelTable {
         }
 
     }
+
+    public static ResultSet avgPrice(Connection conn){
+        String query ="SELECT modelname, avg(price) FROM vehicle GROUP BY modelname ORDER BY count(modelname) desc;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void listModelsforMake(Connection conn) {
+        String query = "select makename, name, class from model group by makename, name;";
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("MakeName: %s ModelName: %s Class: %s: \n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void listClassesAndCount(Connection conn) {
+        String query = "select c_class, count(c_class) from model group by c_class";
+
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            while(result.next()){
+                System.out.printf("Class: %s NumOfCars: %d \n",
+                        result.getString(1),
+                        Integer.parseInt(result.getString(2)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
