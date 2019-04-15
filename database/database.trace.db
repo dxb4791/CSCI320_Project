@@ -2878,3 +2878,57 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/ceo
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
 	... 23 more
+2019-04-14 23:27:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "P_5" not found; SQL statement:
+INSERT INTO vehicle values(5464564,'0','236188',P_5,10000,Civic); [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.command.dml.Insert.prepare(Insert.java:322)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at db.VehicleTable.addCar(VehicleTable.java:384)
+	at View.DealerBuyView.run(DealerBuyView.java:53)
+	at View.DealerView.run(DealerView.java:10)
+	at View.WelcomeView.run(WelcomeView.java:38)
+	at View.WelcomeView.main(WelcomeView.java:57)
+2019-04-14 23:28:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO vehicle values('5464564','0','236188','P_5',10000,'Civic'); [90002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:229)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:145)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:85)
+	at db.VehicleTable.addCar(VehicleTable.java:384)
+	at View.DealerBuyView.run(DealerBuyView.java:53)
+	at View.DealerView.run(DealerView.java:10)
+	at View.WelcomeView.run(WelcomeView.java:38)
+	at View.WelcomeView.main(WelcomeView.java:57)
+2019-04-14 23:30:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO vehicle values('5464564','0','236188','P_5',10000,'Civic'); [90002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:229)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:145)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:85)
+	at db.VehicleTable.addCar(VehicleTable.java:384)
+	at View.DealerBuyView.run(DealerBuyView.java:53)
+	at View.DealerView.run(DealerView.java:10)
+	at View.WelcomeView.run(WelcomeView.java:38)
+	at View.WelcomeView.main(WelcomeView.java:57)
