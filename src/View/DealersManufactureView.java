@@ -25,7 +25,7 @@ public class DealersManufactureView implements View{
         boolean running = true;
         while (running) {
             System.out.println("Commands:\n-[L]ist dealers\n\t" +
-                    "\n-[F]ind All Dealers\n\t-[V]Car by VIN\n\t-[A]dd dealer\n\t-[R]emove Dealer");
+                    "\n-[F]ind All Dealers\n\t-[V]Car by VIN\n\t-[A]dd dealer\n\t-[R]emove Dealer-[S]ort by dealer\n\t");
             String input = in.next();
             char prefix = input.charAt(0);
             prefix = Character.toUpperCase(prefix);
@@ -68,9 +68,8 @@ public class DealersManufactureView implements View{
                     DealerTable.removeDealer(demo.getConnection(), d_id);
                     break;
 
-                case 'Q':
-                    running = false;
-                    continue;
+                case 'S':
+                    DealerTable.printDealersBySales(demo.getConnection());
                 default:
                     break;
             }

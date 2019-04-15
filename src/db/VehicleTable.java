@@ -387,6 +387,7 @@ public class VehicleTable {
             e.printStackTrace();
         }
     }
+
     public static void changePrice(Connection conn, String vin,int newPrice){
         String query = "SET vehicle.price = "+newPrice+" WHERE vehicle.vin ="+vin+";";
         try{
