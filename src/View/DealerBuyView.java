@@ -1,5 +1,6 @@
 package View;
 
+import db.CustomerTable;
 import db.DealerTable;
 import db.H2DatabaseMain;
 import db.VehicleTable;
@@ -25,11 +26,27 @@ public class DealerBuyView implements View{
         prefix = Character.toUpperCase(prefix);
         switch (prefix){
             case 'S':
-                System.out.println("This will list all models,brands,price");
-                DealerTable.listByInventory(demo.getConnection());
+                System.out.println("List Customers By:\n-[I]ncome\n");
+                String temp = in.nextLine();
+                switch(temp.charAt(0)){
+                    case 'I':
+                        CustomerTable.printCustomersByIncome(demo.getConnection());
+                        break;
+                    default:
+                        DealerTable.findDealer(demo.getConnection(),Integer.parseInt(temp));
+                        break;
+                }
                 break;
             case 'M':
-                System.out.println("This will buy vin");
+                System.out.println("-[A]dd car\n-[I]ncome\n");
+                switch(temp.charAt(0)){
+                    case 'I':
+                        CustomerTable.printCustomersByIncome(demo.getConnection());
+                        break;
+                    default:
+                        DealerTable.findDealer(demo.getConnection(),Integer.parseInt(temp));
+                        break;
+                }
                 break;
             case 'Q':
                 return;
