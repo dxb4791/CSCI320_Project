@@ -1,11 +1,12 @@
-makeName,model,D_ID
-Bugatti,Veyron,236188
-Honda,Civic,781880
-Kia,Rio,336016
-Nissan,Altima,752447
-Toyota,Tacoma,168263
-Aston Martin,V8 Vantage,501967
-Acura,NSX,929272
-Audi,S6,102067
-Scion,iQ,838742
-Ford,Escape,577280
+makeName,D_ID
+Bugatti,236188
+Honda,781880
+Kia,336016
+Nissan,752447
+Toyota,168263
+Aston Martin,501967
+Acura,929272
+Audi,102067
+Scion,838742
+Ford,577280
+Subaru,234243
