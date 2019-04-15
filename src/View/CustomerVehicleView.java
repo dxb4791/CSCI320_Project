@@ -1,5 +1,6 @@
 package View;
 
+import db.CustomerTable;
 import db.H2DatabaseMain;
 import db.VehicleTable;
 
@@ -17,11 +18,21 @@ public class CustomerVehicleView implements View  {
 
     @Override
     public void run() {
+        H2DatabaseMain demo = new H2DatabaseMain();
+
+        //Hard drive location of the database
+        String location = "./database/database";
+        String user = "ceo";
+        String password = "test";
+
+        //Create the database connections, basically makes the database
+        demo.createConnection(location, user, password);
+        Connection conn = demo.getConnection();
         Scanner in = new Scanner(System.in);
         System.out.println("db.Customer db.Vehicle Page");
         System.out.println("What would you like to do?");
         System.out.println("- [L]ist all owned vehicles");
-
+        System.out.println("- [S]ell vehicle");
         while(in.hasNext()) {
             String input = in.nextLine();
 
@@ -33,16 +44,7 @@ public class CustomerVehicleView implements View  {
             switch (prefix) {
                 case 'L':
                     System.out.println("This will list all owned vehicles");
-                    H2DatabaseMain demo = new H2DatabaseMain();
 
-                    //Hard drive location of the database
-                    String location = "./database/database";
-                    String user = "ceo";
-                    String password = "test";
-
-                    //Create the database connections, basically makes the database
-                    demo.createConnection(location, user, password);
-                    Connection conn = demo.getConnection();
                     try {
                         Statement statement = conn.createStatement();
                         System.out.println("Enter your name: (This is a wip, only prints for bob johnson)");
@@ -60,6 +62,8 @@ public class CustomerVehicleView implements View  {
                         e.printStackTrace();
                     }
                     break;
+                case 's':
+                    CustomerTable.customerSellsVehicle(demo.getConnection());
                 default:
                     return;
             }
