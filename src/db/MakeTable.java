@@ -196,16 +196,20 @@ public class MakeTable {
         }
 
     }
-    public static ResultSet avgPrice(Connection conn){
+    public static void avgPrice(Connection conn){
         String query = "SELECT makename, avg(price) FROM vehicle, model WHERE vehicle.modelname = model.name GROUP BY makename ORDER BY count(model.makename) desc;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
-            return result;
+            while(result.next()){
+                System.out.printf("db.Make %s\n",
+                        result.getString(1),result.getString(2));
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+
     }
     public static void addMake(Connection conn,Make make){
         String stringquery = "INSERT INTO make values("+make.makename+","+make.D_ID+")";
