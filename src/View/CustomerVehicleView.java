@@ -64,6 +64,7 @@ public class CustomerVehicleView implements View  {
                     break;
                 case 's':
                     CustomerTable.customerSellsVehicle(demo.getConnection());
+                    break;
                 default:
                     return;
             }
