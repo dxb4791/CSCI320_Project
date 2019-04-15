@@ -307,6 +307,212 @@ public class CustomerTable {
             e.printStackTrace();
         }
     }
+    public static void findCar(Connection conn){
+        String query = "select makename,modelname,vin, color, price \n" +
+                "from avail_o inner join model\n" +
+                " on avail_o.modelname = model.name \n";
+        Scanner in = new Scanner(System.in);
+        int countfilter = 0;
+        boolean finished = false;
+        System.out.println("Enter filters or press enter to stop adding filters");
+        while (!finished){
+
+            System.out.println("1. Filter by max price");
+            System.out.println("2. Filter by make");
+            System.out.println("3. Filter by model");
+            System.out.println("4. Filter by class");
+            System.out.println("5. Filter by color");
+            System.out.println("6. Filter by interior");
+            System.out.println("8. Filter by engine");
+            System.out.println("9. Filter by drive");
+            System.out.println("10. Filter by transmission");
+            String input = in.nextLine();
+            if(input.equals("")){
+                query += ";";
+                finished = true;
+                continue;
+            }
+            if(countfilter == 0){
+                query += " where ";
+                countfilter++;
+            }
+            else{
+                query += " and ";
+            }
+            int fnum = Integer.parseInt(input);
+            switch (fnum){
+                case 1:
+                    System.out.println("Enter max price:");
+                    int max = Integer.parseInt(in.nextLine());
+                    System.out.println("Enter min price or 0:");
+                    int min = Integer.parseInt(in.nextLine());
+                    query += String.format("(price between %d and %d)",min,max);
+                    break;
+                case 2:
+                    boolean tmp = false;
+                    query += "(makename in (";
+                    while(!tmp) {
+                        System.out.println("Enter make name:");
+                        String model = in.nextLine();
+                        query += String.format("'%s'", model);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 3:
+                    boolean tmp3 = false;
+                    query += "(modelname in (";
+                    while(!tmp3) {
+                        System.out.println("Enter model name:");
+                        String make = in.nextLine();
+                        query += String.format("'%s'", make);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp3 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 4:
+                    boolean tmp4 = false;
+                    query += "(class in (";
+                    while(!tmp4) {
+                        System.out.println("Enter class name:");
+                        String classn = in.nextLine();
+                        query += String.format("'%s'", classn);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp4 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 5:
+                    boolean tmp5 = false;
+                    query += "(color in (";
+                    while(!tmp5) {
+                        System.out.println("Enter color name:");
+                        String color = in.nextLine();
+                        query += String.format("'%s'", color);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp5 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 8:
+                    boolean tmp8 = false;
+                    query += "(engine in (";
+                    while(!tmp8) {
+                        System.out.println("Enter engine name:");
+                        String engine = in.nextLine();
+                        query += String.format("'%s'", engine);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp8 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 6:
+                    boolean tmp6 = false;
+                    query += "(interior in (";
+                    while(!tmp6) {
+                        System.out.println("Enter interior:");
+                        String interior = in.nextLine();
+                        query += String.format("'%s'", interior);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp6 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 9:
+                    boolean tmp9 = false;
+                    query += "(drive in (";
+                    while(!tmp9) {
+                        System.out.println("Enter drive name:");
+                        String drive = in.nextLine();
+                        query += String.format("'%s'", drive);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp9 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+                case 10:
+                    boolean tmp10 = false;
+                    query += "(transmission in (";
+                    while(!tmp10) {
+                        System.out.println("Enter transmission name:");
+                        String trans = in.nextLine();
+                        query += String.format("'%s'", trans);
+                        System.out.println("Do you wish to add extra choices? y/n");
+                        String choice = in.nextLine();
+                        if (choice.charAt(0) != 'y'){
+                            tmp10 = true;
+                        }
+                        else {
+                            query += ",";
+                        }
+                    }
+                    query += "))";
+                    break;
+            }
+
+
+
+
+        }
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            while(result.next()){
+                System.out.printf("Make %s: Model %s: Color %s: VIN: %s: Price $%d\n",
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getInt(5));
+            }
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+    }
 
 }
 

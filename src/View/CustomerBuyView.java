@@ -2,6 +2,8 @@ package View;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import db.CustomerTable;
 import db.H2DatabaseMain;
 import db.Vehicle;
 import db.VehicleTable;
@@ -22,6 +24,7 @@ public class CustomerBuyView implements View  {
             System.out.println("- [L]ist all vehicles");
             System.out.println("- [B]uy a vehicle");
             System.out.println("- [F]ind a seller");
+            System.out.println("- [C]ar finder");
             String input = in.nextLine();
 
             if (input.length() == 0) {
@@ -52,6 +55,17 @@ public class CustomerBuyView implements View  {
                 case 'F':
                     System.out.println("This will find a seller");
                     break;
+
+                case 'C':
+                    String loc = "./database/database";
+                    String use = "ceo";
+                    String pass = "test";
+
+                    H2DatabaseMain dem = new H2DatabaseMain();
+                    //Create the database connections, basically makes the database
+                    dem.createConnection(loc, use, pass);
+                    CustomerTable.findCar(dem.getConnection());
+
                 case 'Q':
                     running = false;
                     continue;
