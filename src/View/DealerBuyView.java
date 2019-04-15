@@ -1,5 +1,7 @@
 package View;
 
+import db.CustomerTable;
+import db.DealerTable;
 import db.H2DatabaseMain;
 import db.VehicleTable;
 
@@ -21,27 +23,48 @@ public class DealerBuyView implements View{
         Scanner in = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println("Buy Page\n" +
-                    "-[L]ist all:\n" +
-                    "\tmodels,brands,price" +
-                    "\n-[B]uy vin\n");
-            String input = in.next();
+            System.out.println("Dealer Management\n-[S]ales Analytics:\n-[M]anage Inventory\n");
+            String input = in.nextLine();
             char prefix = input.charAt(0);
             prefix = Character.toUpperCase(prefix);
             switch (prefix) {
-                case 'L':
-                    System.out.println("This will list all models,brands,price");
-                    VehicleTable.printVehicleTable(demo.getConnection());
+                case 'S':
+                    System.out.println("List Customers By:\n-[I]ncome\n");
+                    String temp = in.nextLine();
+                    switch (temp.charAt(0)) {
+                        case 'I':
+                            CustomerTable.printCustomersByIncome(demo.getConnection());
+                            break;
+                        default:
+                            DealerTable.findDealer(demo.getConnection(), Integer.parseInt(temp));
+                            break;
+                    }
                     break;
-                case 'B':
-                    System.out.println("This will buy vin");
+                case 'M':
+                    System.out.println("-[A]dd car\n-[I]ncome\n");
+                    temp = in.nextLine();
+                    switch (temp.charAt(0)) {
+                        case 'A':
+                            System.out.println("This will add a make by values(m_id)");
+                            System.out.println("Please Enter a M_ID");
+
+                            String p_string = in.nextLine();
+                            String[] parsed = p_string.split(" ");
+                            VehicleTable.addCar(demo.getConnection(), parsed[0], Integer.parseInt(parsed[1]), Integer.parseInt(parsed[2]), parsed[3], Integer.parseInt(parsed[4]), parsed[5]);
+                            break;
+                        case 'I':
+                            CustomerTable.printCustomersByIncome(demo.getConnection());
+                            break;
+                        default:
+                            DealerTable.findDealer(demo.getConnection(), Integer.parseInt(temp));
+                            break;
+                    }
                     break;
                 case 'Q':
                     running = false;
                     continue;
                 default:
-                    System.out.println("Invalid Command entered");
-                    break;
+                    continue;
             }
         }
     }

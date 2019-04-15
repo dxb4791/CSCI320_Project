@@ -38,7 +38,7 @@ public class MakeTable {
         try {
             String query = "CREATE TABLE IF NOT EXISTS make("
                     + "MAKENAME VARCHAR(255) PRIMARY KEY,"
-                    + "MODEL VARCHAR(255),"+"D_ID VARCHAR(255),"
+                    +"D_ID VARCHAR(255),"
                     + ");";
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -47,9 +47,9 @@ public class MakeTable {
         }
     }
 
-    public static void addPerson(Connection conn, String makename, String model,String D_ID){
+    public static void addPerson(Connection conn, String makename, String D_ID){
         String query = String.format("INSERT INTO make "
-                                    + "VALUES(\'%s\',\'%s\',\'%s\');", makename, model, D_ID);
+                                    + "VALUES(\'%s\',\'%s\');", makename,  D_ID);
         try {
             Statement statement = conn.createStatement();
             statement.execute(query);
@@ -74,7 +74,7 @@ public class MakeTable {
          * the order of the data in reference
          * to the columns to ad dit to
          */
-        sb.append("INSERT INTO make (makename, model,D_ID) VALUES");
+        sb.append("INSERT INTO make (makename,D_ID) VALUES");
 
         /**
          * For each person append a (makename, model) tuple
@@ -85,8 +85,8 @@ public class MakeTable {
          */
         for(int i = 0; i < makes.size(); i++){
             Make m = makes.get(i);
-            sb.append(String.format("(\'%s\',\'%s\',\'%s\')",
-                    m.getMakename(), m.getModel(),m.getD_ID()));
+            sb.append(String.format("(\'%s\',\'%s\')",
+                    m.getMakename(),m.getD_ID()));
             if( i != makes.size()-1){
                 sb.append(",");
             }
@@ -187,29 +187,32 @@ public class MakeTable {
             ResultSet result = stmt.executeQuery(query);
 
             while(result.next()){
-                System.out.printf("db.Make %s: %s: %s  \n",
+                System.out.printf("db.Make %s: %s \n",
                         result.getString(1),
-                        result.getString(2),
-                        result.getString(3));
+                        result.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
     }
-    public static ResultSet avgPrice(Connection conn){
+    public static void avgPrice(Connection conn){
         String query = "SELECT makename, avg(price) FROM vehicle, model WHERE vehicle.modelname = model.name GROUP BY makename ORDER BY count(model.makename) desc;";
         try {
             Statement stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery(query);
-            return result;
+            while(result.next()){
+                System.out.printf("db.Make %s\n",
+                        result.getString(1),result.getString(2));
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+
     }
     public static void addMake(Connection conn,Make make){
-        String stringquery = "INSERT INTO make values("+make.makename+","+make.model+","+make.D_ID+")";
+        String stringquery = "INSERT INTO make values("+make.makename+","+make.D_ID+")";
         try {
             Statement statement = conn.createStatement();
 

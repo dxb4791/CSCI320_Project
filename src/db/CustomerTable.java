@@ -3,6 +3,7 @@ package db;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -511,6 +512,33 @@ public class CustomerTable {
             }
         }catch(SQLException e ){
             e.printStackTrace();
+        }
+    }
+    public static Customer findUser(Connection conn,String c_id){
+        String query = "select * from customer where c_id = "+c_id+";";
+        String cust[]=new String[10];
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+            if(result.next()){
+                cust[0]= result.getString(1);
+                cust[1]= result.getString(2);
+                cust[2]= result.getString(3);
+                cust[3]= result.getString(4);
+                cust[4]= result.getString(5);
+                cust[5]= result.getString(6);
+                cust[6]= result.getString(7);
+                cust[7]= result.getString(8);
+            }
+
+        }catch(SQLException e ){
+            e.printStackTrace();
+        }
+        if(cust[0]==null){
+            return null;
+        }
+        else {
+            return new Customer(cust);
         }
     }
 

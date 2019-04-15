@@ -1,5 +1,6 @@
 package View;
 
+import db.CustomerTable;
 import db.H2DatabaseMain;
 import db.VehicleTable;
 
@@ -17,13 +18,25 @@ public class CustomerVehicleView implements View  {
 
     @Override
     public void run() {
+        H2DatabaseMain demo = new H2DatabaseMain();
+
+        //Hard drive location of the database
+        String location = "./database/database";
+        String user = "ceo";
+        String password = "test";
+
+        //Create the database connections, basically makes the database
+        demo.createConnection(location, user, password);
+        Connection conn = demo.getConnection();
         Scanner in = new Scanner(System.in);
         boolean running = true;
         while (running){
+
+
             System.out.println("db.Customer db.Vehicle Page");
             System.out.println("What would you like to do?");
             System.out.println("- [L]ist all owned vehicles");
-
+            System.out.println("- [S]ell vehicle");
 
             String input = in.nextLine();
 
@@ -35,22 +48,12 @@ public class CustomerVehicleView implements View  {
             switch (prefix) {
                 case 'L':
                     System.out.println("This will list all owned vehicles");
-                    H2DatabaseMain demo = new H2DatabaseMain();
 
-                    //Hard drive location of the database
-                    String location = "./database/database";
-                    String user = "ceo";
-                    String password = "test";
-
-                    //Create the database connections, basically makes the database
-                    demo.createConnection(location, user, password);
-                    Connection conn = demo.getConnection();
                     try {
                         Statement statement = conn.createStatement();
-                        System.out.println("Enter your name: (This is a wip, only prints for bob johnson)");
+                        System.out.println("Enter your name:");
                         String name = in.nextLine();
                         String stringquery = "SELECT VIN, NAME FROM CUSTOMER WHERE name = \'" + name + "\';";
-                        //String stringquery = "select * from customer where name = 'Bob Johnson';";
                         ResultSet result = statement.executeQuery(stringquery);
 
                         while (result.next()) {
@@ -61,6 +64,9 @@ public class CustomerVehicleView implements View  {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                    break;
+                case 's':
+                    CustomerTable.customerSellsVehicle(demo.getConnection());
                     break;
                 default:
                     return;
